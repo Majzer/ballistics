@@ -8,32 +8,37 @@ import com.badlogic.gdx.Gdx;
 
 public class Ballistics {
 
-    private float celY;
-    private float celX;
-    private float sebesseg;
+    private float x = 2;
 
-    public float getSebesseg() {
-        return sebesseg;
+
+    public float getTavolsag(){
+        return 10;
     }
 
-    public void setSebesseg(float sebesseg) {
-        this.sebesseg = sebesseg;
+    public float getMagassag(){
+        return 5;
     }
 
-    public float getCelX() {
-        return Gdx.graphics.getWidth()-128;
+    public float getGraphY(float graphX){
+        return graphX*x*x/2.0f*2f;
     }
 
-    public void setCelX(float celX) {
-        this.celX = celX;
+    public float getX() {
+        return x;
     }
 
-    public float getCelY() {
-        return 0;
+    public void setX(float x) {
+        this.x = x;
+        onRefresh();
     }
 
-    public void setCelY(float celY) {
-        this.celY = celY;
+    public static void main(String[] args) {
+        Ballistics ballistics = new Ballistics();
+        ballistics.setX(3);
+    }
+
+    protected void onRefresh(){
+
     }
 
 

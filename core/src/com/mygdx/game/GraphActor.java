@@ -1,6 +1,5 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -10,24 +9,30 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
  */
 
 public class GraphActor extends Actor {
-    private Sprite sprite;
-    private static Texture texture = null;
+    Sprite sprite;
+    Graph graph;
 
-    public GraphActor() {
-        if (texture == null){
-            texture = new Texture("");
+    public GraphActor(Ballistics ballistics) {
+        this.ballistics = ballistics;
+        graph = new Graph(320,240,ballistics);
+        setSize(320,240);
+        refresh();
+    }
+
+    Ballistics ballistics;
+
+
+    public void refresh(){
+        if (sprite != null) {
+            sprite.getTexture().dispose();
         }
-        sprite = new Sprite(texture);
-
+        sprite = new Sprite(graph.getTexture());
+        sprite.setSize(320,240);
     }
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
-    }
-
-    @Override
-    public void act(float delta) {
-        super.act(delta);
+        sprite.draw(batch);
     }
 }
