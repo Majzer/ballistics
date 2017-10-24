@@ -19,9 +19,9 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		agyu = new Texture("cannon.png");
-		cel = new Texture("target.png");
-		hatter = new Texture("background.png");
+		agyu = new Texture("spriteok\\cannon.png");
+		cel = new Texture("spriteok\\target.png");
+		hatter = new Texture("hatter\\background.png");
 		cannonSprite = new Sprite(agyu);
 		cannonSprite.setSize(128,128);
 		targetSprite = new Sprite(cel);
