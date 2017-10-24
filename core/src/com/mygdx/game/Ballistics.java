@@ -9,6 +9,7 @@ import com.badlogic.gdx.Gdx;
 public class Ballistics {
 
     private float x = 2;
+    private float g = 9,81;//g erő
 
 
     public float getTavolsag(){
@@ -26,6 +27,10 @@ public class Ballistics {
     public float getX() {
         return x;
     }
+    //kezdő sebesség
+    public float getSebessegKezdo() {return 15;}
+    //képlet
+    public float getAlpha(){return (getGraphY() + g * getX()* getX())/((getX()+2)*(getSebessegKezdo()+1))}
 
     public void setX(float x) {
         this.x = x;
