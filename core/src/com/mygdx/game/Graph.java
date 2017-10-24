@@ -21,7 +21,7 @@ public class Graph {
 
     public Texture getTexture(){
         Pixmap pixmap = new Pixmap(szelesseg, magassag, Pixmap.Format.RGBA8888);
-        pixmap.setColor(0.2f, 0.2f, 0.2f, 1f);
+        pixmap.setColor(0.2f, 0.2f, 0.2f, 0f);
         pixmap.fill();
         pixmap.setColor(1,1,1,1);
         for(int i = 0; i< szelesseg; i++){

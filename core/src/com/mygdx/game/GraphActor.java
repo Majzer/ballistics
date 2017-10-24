@@ -14,8 +14,8 @@ public class GraphActor extends Actor {
 
     public GraphActor(Ballistics ballistics) {
         this.ballistics = ballistics;
-        graph = new Graph(320,240,ballistics);
-        setSize(320,240);
+        graph = new Graph(640,370,ballistics);
+        setSize(640,370);
         refresh();
     }
 
@@ -27,7 +27,7 @@ public class GraphActor extends Actor {
             sprite.getTexture().dispose();
         }
         sprite = new Sprite(graph.getTexture());
-        sprite.setSize(320,240);
+        sprite.setSize(640,370);
     }
 
     @Override

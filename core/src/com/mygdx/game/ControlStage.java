@@ -1,7 +1,9 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
@@ -9,13 +11,35 @@ import com.badlogic.gdx.utils.viewport.Viewport;
  */
 
 public class ControlStage extends Stage {
-    GraphStage graphStage;
+    private GraphActor graphActor;
+    private Ballistics ballistics = new Ballistics(){
+        @Override
+        protected void onRefresh() {
+            super.onRefresh();
+            graphActor.refresh();
+        }
+    };
 
-    public ControlStage(Viewport viewport, Batch batch, GraphStage graphStage) {
+
+
+
+
+
+
+    public GraphStage(Viewport viewport, Batch batch) {
         super(viewport, batch);
-        this.graphStage= graphStage;
+        addActor(graphActor = new GraphActor(ballistics));
+        graphActor.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                ballistics.setX(ballistics.getX()*2);
+            }
+        });
         setDebugAll(true);
+    }
 
-        //graphStage.refresh();
+    public void refresh(){
+        graphActor.refresh();
     }
 }

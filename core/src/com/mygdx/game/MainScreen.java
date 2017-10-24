@@ -22,7 +22,7 @@ public class MainScreen implements Screen{
     SpriteBatch batch = new SpriteBatch();
     GraphStage graphStage = new GraphStage(new ExtendViewport(640, 480, new OrthographicCamera(640, 480)), batch);
     ControlStage controlStage = new ControlStage(new ExtendViewport(640, 480, new OrthographicCamera(640, 480)), batch, graphStage);
-
+    Texture hatter = new Texture("hatter\\background.png");
 
     public MainScreen() {
 
@@ -41,6 +41,9 @@ public class MainScreen implements Screen{
     public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        batch.begin();
+        batch.draw(hatter, 0, 0);
+        batch.end();
         controlStage.act(Gdx.graphics.getDeltaTime());
         controlStage.draw();
         graphStage.act(Gdx.graphics.getDeltaTime());
