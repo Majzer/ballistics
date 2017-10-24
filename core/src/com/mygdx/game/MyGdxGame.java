@@ -9,9 +9,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture cannon;
-	Texture target;
-	Texture background;
+	Texture agyu;
+	Texture cel;
+	Texture hatter;
 	Sprite cannonSprite;
 	Sprite targetSprite;
 	Ballistics ballistics = new Ballistics();
@@ -19,14 +19,14 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		cannon = new Texture("cannon.png");
-		target = new Texture("target.png");
-		background = new Texture("background.png");
-		cannonSprite = new Sprite(cannon);
+		agyu = new Texture("cannon.png");
+		cel = new Texture("target.png");
+		hatter = new Texture("background.png");
+		cannonSprite = new Sprite(agyu);
 		cannonSprite.setSize(128,128);
-		targetSprite = new Sprite(target);
+		targetSprite = new Sprite(cel);
 		targetSprite.setSize(128,128);
-		targetSprite.setPosition(ballistics.getTargetX(),ballistics.getTargetY());
+		targetSprite.setPosition(ballistics.getCelX(),ballistics.getCelY());
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		batch.draw(background, 0, 0);
+		batch.draw(hatter, 0, 0);
 		cannonSprite.draw(batch);
 		targetSprite.draw(batch);
 		batch.end();
@@ -43,6 +43,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void dispose () {
 		batch.dispose();
-		cannon.dispose();
+		agyu.dispose();
 	}
 }

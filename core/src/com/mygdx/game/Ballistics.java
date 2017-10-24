@@ -8,32 +8,32 @@ import com.badlogic.gdx.Gdx;
 
 public class Ballistics {
 
-    private float targetY;
-    private float targetX;
-    private float velocity;
+    private float celY;
+    private float celX;
+    private float sebesseg;
 
-    public float getVelocity() {
-        return velocity;
+    public float getSebesseg() {
+        return sebesseg;
     }
 
-    public void setVelocity(float velocity) {
-        this.velocity = velocity;
+    public void setSebesseg(float sebesseg) {
+        this.sebesseg = sebesseg;
     }
 
-    public float getTargetX() {
+    public float getCelX() {
         return Gdx.graphics.getWidth()-128;
     }
 
-    public void setTargetX(float targetX) {
-        this.targetX = targetX;
+    public void setCelX(float celX) {
+        this.celX = celX;
     }
 
-    public float getTargetY() {
+    public float getCelY() {
         return 0;
     }
 
-    public void setTargetY(float targetY) {
-        this.targetY = targetY;
+    public void setCelY(float celY) {
+        this.celY = celY;
     }
 
 
