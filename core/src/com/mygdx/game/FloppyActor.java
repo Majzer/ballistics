@@ -27,7 +27,7 @@ public class FloppyActor extends OneSpriteStaticActor {
 
         float[] pos = ballistics.getXYbyTime(elapsedTime,indexOfAngles);
         setPosition(pos[0]-getWidth()/2, pos[1]-getHeight()/2);
-        setRotation(getRotation()-(ballistics.getV0()-85)/(getElapsedTime()/3)); // pörgetés átállítása
+        setRotation(getRotation()-ballistics.getV0()*(1/getElapsedTime())); // pörgetés átállítása
         if (elapsedTime>ballistics.getTimeOfFlight(indexOfAngles)){
             getStage().getActors().removeValue(this, true);
             sound.play();

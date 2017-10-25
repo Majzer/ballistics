@@ -20,8 +20,8 @@ public class GameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                addActor(new FloppyActor(new Ballistics(x,y,80),0));
-                addActor(new FloppyActor(new Ballistics(x,y,80),1));
+                addActor(new FloppyActor(new Ballistics(x,y,100),0));
+                addActor(new FloppyActor(new Ballistics(x,y,100),1));
             }
         });
 
