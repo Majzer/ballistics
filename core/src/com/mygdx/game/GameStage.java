@@ -2,8 +2,6 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -13,25 +11,21 @@ import com.mygdx.game.MyBaseClasses.Scene2D.MyStage;
  * Created by tanulo on 2017. 10. 25..
  */
 
-public class ControlStage extends MyStage {
+public class GameStage extends MyStage {
 
-    GameStage gameStage;
 
-    public ControlStage(Batch batch, MyGdxGame game, final GameStage gameStage) {
+    public GameStage(Batch batch, MyGdxGame game) {
         super(new ExtendViewport(1024,768), batch, game);
-        this.gameStage = gameStage;
-
-        TextButton button;
-        addActor(button = new TextButton("Törlés", game.getTextButtonStyle()));
-        button.addListener(new ClickListener(){
+        addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                gameStage.getActors().clear();
+                addActor(new FloppyActor(new Ballistics(x,y,100),0));
+                addActor(new FloppyActor(new Ballistics(x,y,100),1));
             }
         });
-        button.setPosition(getViewport().getWorldWidth()-button.getWidth(), getViewport().getWorldHeight()-button.getHeight());
 
+        //setDebugAll(true);
     }
 
     @Override
