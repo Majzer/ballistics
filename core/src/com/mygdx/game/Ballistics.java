@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.MathUtils;
 
 /**
  * Created by Majzer on 22/10/2017.
@@ -8,44 +9,75 @@ import com.badlogic.gdx.Gdx;
 
 public class Ballistics {
 
-    private float x = 2;
-    private float g = 9,81;//g erő
 
+    static public final float PI = 3.1415927f;
+    /**
+     * multiply by this to convert from radians to degrees
+     */
+    static public final float radiansToDegrees = 180f / PI;
+    static public final float radDeg = radiansToDegrees;
+    /**
+     * multiply by this to convert from degrees to radians
+     */
+    static public final float degreesToRadians = PI / 180;
+    static public final float degRad = degreesToRadians;
 
-    public float getTavolsag(){
-        return 10;
+    float x, y, v0;
+    float g = 9.81f;
+
+    public float[] getAnglesByRad() {
+        float a0 = (float) Math.atan((v0 * v0 + Math.sqrt(v0 * v0 * v0 * v0 - g * (g * x * x + 2 * y * v0 * v0))) / (g * x));
+        float a1 = (float) Math.atan((v0 * v0 - Math.sqrt(v0 * v0 * v0 * v0 - g * (g * x * x + 2 * y * v0 * v0))) / (g * x));
+        //float a0 = (float)Math.atan(x/y + Math.sqrt(y*y/x*x+1))
+        return new float[]{a0, a1};
     }
 
-    public float getMagassag(){
-        return 5;
+    public float[] getAnglesByDeg() {
+        float f[] = getAnglesByRad();
+        //float a0 = (float)Math.atan(x/y + Math.sqrt(y*y/x*x+1))
+        return new float[]{f[0] * radiansToDegrees, f[1] * radiansToDegrees};
     }
 
-    public float getGraphY(float graphX){
-        return graphX*x*x/2.0f*2f;
+    public float[] getXYbyTime(float elapsedtime, int indexOfAngles){
+        return new float[]{
+                v0*elapsedtime*((float)Math.cos(getAnglesByRad()[indexOfAngles])), //x
+                v0*elapsedtime*((float)Math.sin(getAnglesByRad()[indexOfAngles]))-1f/2f*g*elapsedtime*elapsedtime
+        };
     }
 
-    public float getX() {
-        return x;
+    public float getTimeOfFlight(int indexOfAngles){
+        return (2*v0*(float)Math.sin(getAnglesByRad()[indexOfAngles]))/(g);
     }
-    //kezdő sebesség
-    public float getSebessegKezdo() {return 15;}
-    //képlet
-    public float getAlpha(){return (getGraphY() + g * getX()* getX())/((getX()+2)*(getSebessegKezdo()+1))}
 
-    public void setX(float x) {
+
+    public Ballistics(float x, float y, float v0) {
         this.x = x;
-        onRefresh();
+        this.y = y;
+        this.v0 = v0;
     }
 
+    public void testFlight(int indexOfAngles){
+        float timeoffl = getTimeOfFlight(indexOfAngles);
+        for(float t=0; t<=timeoffl; t+=1f/60f){
+            float[] pos = getXYbyTime(t,indexOfAngles);
+            System.out.println("X=" + pos[0]+" Y="  + pos[1]);
+        }
+    }
+
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        Ballistics ballistics = new Ballistics();
-        ballistics.setX(3);
+
+        Ballistics test = new Ballistics(2, 1, 7.9f);
+        System.out.println(test.getAnglesByDeg()[0]);
+        System.out.println(test.getAnglesByDeg()[1]);
+        System.out.println(test.getTimeOfFlight(0));
+        System.out.println(test.getTimeOfFlight(1));
+        test.testFlight(1);
+
     }
-
-    protected void onRefresh(){
-
-    }
-
 
 
 
