@@ -43,6 +43,9 @@ public class Assets {
 	public static final AssetDescriptor<Sound> STAR_SOUND
 			= new AssetDescriptor<Sound>("star.wav", Sound.class);
 
+	public static final AssetDescriptor<Sound> BACKGROUND_SOUND
+			= new AssetDescriptor<Sound>("backgroundmusic.wav", Sound.class);
+
     public static void prepare() {
 		manager = new AssetManager();
 		Texture.setAssetManager(manager);
@@ -59,6 +62,8 @@ public class Assets {
 		manager.load(ARIAL_30_FONT);
 
 		manager.load(STAR_SOUND);
+
+		manager.load(BACKGROUND_SOUND);
 	}
 
     public static void afterLoaded() {
