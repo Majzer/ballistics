@@ -31,7 +31,7 @@ public class MainScreen extends MyScreen {
         setBackGroundColor(0.4f, 0.2f,0f);
         gameStage = new GameStage(spriteBatch, game);
         controlStage = new ControlStage(spriteBatch, game, gameStage);
-        sound.play();
+        sound.loop();
         InputMultiplexer im = new InputMultiplexer();
         im.addProcessor(controlStage);
         im.addProcessor(gameStage);
