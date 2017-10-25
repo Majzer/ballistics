@@ -25,6 +25,10 @@ public class Ballistics {
     float x, y, v0;
     float g = 9.81f;
 
+    public float getV0() {
+        return v0;
+    }
+
     public float[] getAnglesByRad() {
         float a0 = (float) Math.atan((v0 * v0 + Math.sqrt(v0 * v0 * v0 * v0 - g * (g * x * x + 2 * y * v0 * v0))) / (g * x));
         float a1 = (float) Math.atan((v0 * v0 - Math.sqrt(v0 * v0 * v0 * v0 - g * (g * x * x + 2 * y * v0 * v0))) / (g * x));

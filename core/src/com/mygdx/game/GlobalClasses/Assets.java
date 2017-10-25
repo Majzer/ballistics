@@ -9,7 +9,6 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGeneratorLoader;
 import com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader;
@@ -36,8 +35,8 @@ public class Assets {
 			= new AssetDescriptor<BitmapFont>(fontParameter.fontFileName, BitmapFont.class, fontParameter);
 
 
-	public static final AssetDescriptor<Texture> BADLOGIC_TEXTURE
-			= new AssetDescriptor<Texture>("badlogic.jpg", Texture.class);
+	public static final AssetDescriptor<Texture> FLOPPYDISK_TEXTURE
+			= new AssetDescriptor<Texture>("Floppy_Disk.png", Texture.class);
 
 
 	public static final AssetDescriptor<Sound> STAR_SOUND
@@ -57,7 +56,7 @@ public class Assets {
 		manager.setLoader(BitmapFont.class, ".ttf", new FreetypeFontLoader(resolver));
 		manager.setLoader(BitmapFont.class, ".otf", new FreetypeFontLoader(resolver));
 
-		manager.load(BADLOGIC_TEXTURE);
+		manager.load(FLOPPYDISK_TEXTURE);
 
 		manager.load(ARIAL_30_FONT);
 

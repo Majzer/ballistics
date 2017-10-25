@@ -1,9 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.GlobalClasses.Assets;
-import com.mygdx.game.MyBaseClasses.Scene2D.MyActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
 /**
@@ -17,7 +15,7 @@ public class FloppyActor extends OneSpriteStaticActor {
     int indexOfAngles;
 
     public FloppyActor(Ballistics ballistics, int indexOfAngles) {
-        super(Assets.manager.get(Assets.BADLOGIC_TEXTURE));
+        super(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE));
         this.ballistics = ballistics;
         this.indexOfAngles = indexOfAngles;
         setSize(50,50);
@@ -29,7 +27,7 @@ public class FloppyActor extends OneSpriteStaticActor {
 
         float[] pos = ballistics.getXYbyTime(elapsedTime,indexOfAngles);
         setPosition(pos[0]-getWidth()/2, pos[1]-getHeight()/2);
-
+        setRotation(getRotation()-(ballistics.getV0()-85)/(getElapsedTime()/3));
         if (elapsedTime>ballistics.getTimeOfFlight(indexOfAngles)){
             getStage().getActors().removeValue(this, true);
             sound.play();

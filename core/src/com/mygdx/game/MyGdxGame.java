@@ -1,6 +1,5 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
@@ -13,9 +12,9 @@ public class MyGdxGame extends MyGame {
 	public TextButton.TextButtonStyle getTextButtonStyle() {
 		TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
 		textButtonStyle.font = Assets.manager.get(Assets.ARIAL_30_FONT);
-		textButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.BADLOGIC_TEXTURE)));
-		textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.BADLOGIC_TEXTURE)));
-		textButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.BADLOGIC_TEXTURE)));
+		textButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE)));
+		textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE)));
+		textButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE)));
 		return textButtonStyle;
 	}
 
