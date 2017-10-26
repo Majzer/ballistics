@@ -1,10 +1,12 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.MyBaseClasses.DosActor;
 import com.mygdx.game.MyBaseClasses.IBMActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyStage;
 
@@ -34,9 +36,10 @@ public class GameStage extends MyStage {
             }
         });
 
-
         //setDebugAll(true);
     }
+
+
 
     @Override
     public void init() {

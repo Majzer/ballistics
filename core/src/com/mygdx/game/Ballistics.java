@@ -68,6 +68,8 @@ public class Ballistics {
         }
     }
 
+
+
     public static void main(String[] args) {
 
         Ballistics test = new Ballistics(2, 1, 7.9f);
