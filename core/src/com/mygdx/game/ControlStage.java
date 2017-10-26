@@ -1,9 +1,12 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -32,6 +35,20 @@ public class ControlStage extends MyStage {
         });
         button.setPosition(getViewport().getWorldWidth()-button.getWidth(), getViewport().getWorldHeight()-button.getHeight());
 
+
+        Slider slider = new Slider(10,400, 1, false, game.getSliderStyle());
+        slider.addCaptureListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeListener.ChangeEvent event, Actor actor) {
+                //Itt módosítja a gamestaget!
+                //System.out.println(((Slider)actor).getValue() + " m/s");
+            }
+        });
+        slider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-50);
+        slider.setSize(400,20);
+        slider.setValue(200);
+
+        addActor(slider);
     }
 
     @Override
