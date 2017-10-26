@@ -22,12 +22,20 @@ public class Ballistics {
     static public final float degreesToRadians = PI / 180;
     static public final float degRad = degreesToRadians;
 
-    float x, y, v0;
+
+
+    float x, y, v0=1f;
     float g = 9.81f;
+
+    public void setV0(float v0) {
+        this.v0 = v0;
+    }
 
     public float getV0() {
         return v0;
     }
+
+
 
     public float[] getAnglesByRad() {
         float a0 = (float) Math.atan((v0 * v0 + Math.sqrt(v0 * v0 * v0 * v0 - g * (g * x * x + 2 * y * v0 * v0))) / (g * x));
@@ -58,6 +66,7 @@ public class Ballistics {
         this.x = x;
         this.y = y;
         this.v0 = v0;
+        System.out.println(v0);
     }
 
     public void testFlight(int indexOfAngles){

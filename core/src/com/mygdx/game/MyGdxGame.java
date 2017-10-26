@@ -39,10 +39,10 @@ public class MyGdxGame extends MyGame {
 
 	public Slider.SliderStyle getSliderStyle(){
 		Slider.SliderStyle sliderStyle = new Slider.SliderStyle();
-		sliderStyle.knobDown = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE),0,0,10,10));
-		sliderStyle.knobOver = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE),100,120,10,10));
-		sliderStyle.knob = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE),310,320,10,10));
-		sliderStyle.background = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE),0,200,400,20));
+		sliderStyle.knobDown = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.KNOB_TEXTURE)));
+		sliderStyle.knobOver = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.KNOB_TEXTURE)));
+		sliderStyle.knob = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SLIDER_TEXTURE)));
+		sliderStyle.background = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SLIDER_TEXTURE)));
 		return sliderStyle;
 	}
 
