@@ -9,6 +9,10 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyStage;
 
+import java.awt.event.MouseEvent;
+
+import javax.swing.JOptionPane;
+
 /**
  * Created by tanulo on 2017. 10. 25..
  */
@@ -21,6 +25,7 @@ public class ControlStage extends MyStage {
         super(new ExtendViewport(1024,768), batch, game);
         this.gameStage = gameStage;
 
+
         TextButton button;
         addActor(button = new TextButton("Törlés", game.getTextButtonStyle()));
         button.addListener(new ClickListener(){
@@ -30,6 +35,7 @@ public class ControlStage extends MyStage {
                 gameStage.getActors().clear();
             }
         });
+
         button.setPosition(getViewport().getWorldWidth()-button.getWidth(), getViewport().getWorldHeight()-button.getHeight());
 
     }

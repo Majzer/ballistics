@@ -38,6 +38,8 @@ public class Assets {
 	public static final AssetDescriptor<Texture> FLOPPYDISK_TEXTURE
 			= new AssetDescriptor<Texture>("Floppy_Disk.png", Texture.class);
 
+	public static final AssetDescriptor<Texture> IBM_TEXTURE
+			= new AssetDescriptor<Texture>("IBM.png", Texture.class);
 
 	public static final AssetDescriptor<Sound> STAR_SOUND
 			= new AssetDescriptor<Sound>("star.wav", Sound.class);
@@ -57,6 +59,8 @@ public class Assets {
 		manager.setLoader(BitmapFont.class, ".otf", new FreetypeFontLoader(resolver));
 
 		manager.load(FLOPPYDISK_TEXTURE);
+
+		manager.load(IBM_TEXTURE);
 
 		manager.load(ARIAL_30_FONT);
 

@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.MyBaseClasses.IBMActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyStage;
 
 /**
@@ -22,8 +23,10 @@ public class GameStage extends MyStage {
                 super.clicked(event, x, y);
                 addActor(new FloppyActor(new Ballistics(x,y,100),0));
                 addActor(new FloppyActor(new Ballistics(x,y,100),1));
+                addActor(new IBMActor(event.getStageX(), event.getStageY()));
             }
         });
+
 
         //setDebugAll(true);
     }
