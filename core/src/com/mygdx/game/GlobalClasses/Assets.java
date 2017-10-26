@@ -38,6 +38,17 @@ public class Assets {
 	public static final AssetDescriptor<Texture> FLOPPYDISK_TEXTURE
 			= new AssetDescriptor<Texture>("Floppy_Disk.png", Texture.class);
 
+	public static final AssetDescriptor<Texture> V0_BUTTON_1_TEXTURE
+			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb1.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> V0_BUTTONDOWN_1_TEXTURE
+			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb1_down.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> V0_BUTTON_2_TEXTURE
+			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb2.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> V0_BUTTONDOWN_2_TEXTURE
+			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb2_down.png", Texture.class);
 
 	public static final AssetDescriptor<Sound> STAR_SOUND
 			= new AssetDescriptor<Sound>("star.wav", Sound.class);
@@ -63,6 +74,14 @@ public class Assets {
 		manager.load(STAR_SOUND);
 
 		manager.load(BACKGROUND_SOUND);
+
+		manager.load(V0_BUTTON_1_TEXTURE);
+
+		manager.load(V0_BUTTONDOWN_1_TEXTURE);
+
+		manager.load(V0_BUTTON_2_TEXTURE);
+
+		manager.load(V0_BUTTONDOWN_2_TEXTURE);
 	}
 
     public static void afterLoaded() {
