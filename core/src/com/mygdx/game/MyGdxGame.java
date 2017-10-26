@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.mygdx.game.DemoLoading.LoadingScreen;
@@ -18,6 +19,14 @@ public class MyGdxGame extends MyGame {
 		return textButtonStyle;
 	}
 
+	public Slider.SliderStyle getSliderStyle(){
+		Slider.SliderStyle sliderStyle = new Slider.SliderStyle();
+		sliderStyle.knobDown = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE),0,0,10,10));
+		sliderStyle.knobOver = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE),100,120,10,10));
+		sliderStyle.knob = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE),310,320,10,10));
+		sliderStyle.background = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE),0,200,400,20));
+		return sliderStyle;
+	}
 
 
 
