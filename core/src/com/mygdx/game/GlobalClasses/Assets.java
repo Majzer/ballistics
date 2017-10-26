@@ -68,6 +68,9 @@ public class Assets {
     public static final AssetDescriptor<Texture> DOS3_TEXTURE
             = new AssetDescriptor<Texture>("DOS3.jpg", Texture.class);
 
+	public static final AssetDescriptor<Texture> SZOG_TEXTURE
+			= new AssetDescriptor<Texture>("szog.png", Texture.class);
+
 	public static final AssetDescriptor<Sound> STAR_SOUND
 			= new AssetDescriptor<Sound>("star.wav", Sound.class);
 
@@ -127,6 +130,8 @@ public class Assets {
 		manager.load(DOS2_TEXTURE);
 
 		manager.load(DOS3_TEXTURE);
+
+		manager.load(SZOG_TEXTURE);
 
 	}
 

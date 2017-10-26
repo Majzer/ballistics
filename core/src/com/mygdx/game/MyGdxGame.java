@@ -27,6 +27,14 @@ public class MyGdxGame extends MyGame {
         return ButtonStyle;
     }
 
+	public Button.ButtonStyle getButtonStyleSzog() {
+		Button.ButtonStyle ButtonStyle = new TextButton.TextButtonStyle();
+		ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SZOG_TEXTURE)));
+		ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SZOG_TEXTURE)));
+		ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SZOG_TEXTURE)));
+		return ButtonStyle;
+	}
+
 
 	public TextButton.TextButtonStyle getTextButtonStyle() {
 		TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
@@ -36,6 +44,8 @@ public class MyGdxGame extends MyGame {
 		textButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTONDOWN_1_TEXTURE)));
 		return textButtonStyle;
 	}
+
+
 
 	public Slider.SliderStyle getSliderStyle(){
 		Slider.SliderStyle sliderStyle = new Slider.SliderStyle();

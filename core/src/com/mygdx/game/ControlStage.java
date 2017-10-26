@@ -60,6 +60,18 @@ public class ControlStage extends MyStage {
         });
         buttonV0_2.setPosition(buttonV0_1.getWidth()*2 , getViewport().getWorldHeight()-buttonV0_2.getHeight()-buttonV0_1.getHeight() );
 
+        //Szükséges szög "gomb"
+        Button buttonSzog;
+        addActor(buttonSzog = new Button(game.getButtonStyleSzog()));
+        buttonSzog.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                //Röppályákat tartalmazó tömb 1. elemére mutató változó
+            }
+        });
+        buttonSzog.setPosition(0,0);
+
         //V0 változtató slider
         final Slider slider = new Slider(1,200, 1, false, game.getSliderStyle());
         slider.setValue(100);
