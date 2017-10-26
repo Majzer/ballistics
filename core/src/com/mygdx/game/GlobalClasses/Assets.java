@@ -102,7 +102,6 @@ public class Assets {
 
 		manager.load(V0_BUTTONDOWN_2_TEXTURE);
 
-		manager.load(IBM_TEXTURE);
 	}
 
     public static void afterLoaded() {
