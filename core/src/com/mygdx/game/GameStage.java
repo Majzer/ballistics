@@ -19,7 +19,14 @@ public class GameStage extends MyStage {
 
     Ballistics ballistics;
     ControlStage controlStage;
-    static int i=0;
+
+    public void setV0(float v0) {
+        this.v0 = v0;
+    }
+
+    //static int i=0;
+    float v0 = 100;
+
 
     public GameStage(Batch batch, MyGdxGame game) {
         super(new ExtendViewport(1024,768), batch, game);
@@ -31,11 +38,11 @@ public class GameStage extends MyStage {
                 //getLastAdded().remove();
                 IBMActor ibmActor;
                 addActor(ibmActor = new IBMActor(x, y));
-                addActor(new FloppyActor(new Ballistics(x,y,100),0, ibmActor));
-                addActor(new FloppyActor(new Ballistics(x,y,100),1, ibmActor));
+                addActor(new FloppyActor(new Ballistics(x,y,v0),0, ibmActor));
+                addActor(new FloppyActor(new Ballistics(x,y,v0),1, ibmActor));
 
 
-                i++;
+                //i++;
             }
         });
 

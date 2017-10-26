@@ -78,8 +78,9 @@ public class ControlStage extends MyStage {
         slider.addCaptureListener(new ChangeListener() {
             @Override
             public void changed(ChangeListener.ChangeEvent event, Actor actor) {
-                slider_ertek = ((Slider)actor).getValue();
-                System.out.println(((Slider)actor).getValue() + " m/s");
+                //slider_ertek = ((Slider)actor).getValue();
+                //System.out.println(((Slider)actor).getValue() + " m/s");
+                gameStage.setV0(slider.getValue());
             }
         });
         slider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-50);
