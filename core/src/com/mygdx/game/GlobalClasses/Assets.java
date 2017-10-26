@@ -76,6 +76,16 @@ public class Assets {
 		manager.load(STAR_SOUND);
 
 		manager.load(BACKGROUND_SOUND);
+
+		manager.load(V0_BUTTON_1_TEXTURE);
+
+		manager.load(V0_BUTTONDOWN_1_TEXTURE);
+
+		manager.load(V0_BUTTON_2_TEXTURE);
+
+		manager.load(V0_BUTTONDOWN_2_TEXTURE);
+
+		manager.load(IBM_TEXTURE);
 	}
 
     public static void afterLoaded() {
