@@ -47,6 +47,15 @@ public class Assets {
 	public static final AssetDescriptor<Sound> BACKGROUND_SOUND
 			= new AssetDescriptor<Sound>("backgroundmusic.wav", Sound.class);
 
+	public static final AssetDescriptor<Sound> XP_SOUND
+			= new AssetDescriptor<Sound>("xp.wav", Sound.class);
+
+	public static final AssetDescriptor<Sound> FLOPI1_SOUND
+			= new AssetDescriptor<Sound>("flopi1.wav", Sound.class);
+
+	public static final AssetDescriptor<Sound> FLOPI2_SOUND
+			= new AssetDescriptor<Sound>("flopi2.wav", Sound.class);
+
     public static void prepare() {
 		manager = new AssetManager();
 		Texture.setAssetManager(manager);
@@ -67,6 +76,12 @@ public class Assets {
 		manager.load(STAR_SOUND);
 
 		manager.load(BACKGROUND_SOUND);
+
+		manager.load(XP_SOUND);
+
+		manager.load(FLOPI1_SOUND);
+
+		manager.load(FLOPI2_SOUND);
 	}
 
     public static void afterLoaded() {

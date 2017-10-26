@@ -30,7 +30,7 @@ abstract public class MyActor extends Actor implements InitableInterface {
         super.sizeChanged();
         setOrigin(getWidth() / 2, getHeight() / 2);
         rectangle.setSize(getWidth(), getHeight());
-        circle.setRadius((getWidth() + getHeight()) / 2f);
+        circle.setRadius((getWidth() + getHeight()) / 4f);
     }
 
     @Override

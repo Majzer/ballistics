@@ -1,5 +1,6 @@
 package com.mygdx.game.MyBaseClasses;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -17,12 +18,31 @@ import sun.rmi.runtime.Log;
 
 public class IBMActor extends OneSpriteStaticActor {
 
+    Sound soundFlopi1 = Assets.manager.get(Assets.FLOPI1_SOUND);
+    Sound soundFlopi2 = Assets.manager.get(Assets.FLOPI2_SOUND);
+    Sound soundXP = Assets.manager.get(Assets.XP_SOUND);
+
+    int life = 2;
+
+    public void decLife(){
+        life--;
+        if (life==1){
+        soundFlopi1.play(150);
+        }
+        if (life==0){
+            soundFlopi2.play(150);
+            soundXP.play();
+            getStage().getActors().removeValue(this, true);
+        }
+    }
+
     public IBMActor(float x, float y) {
         super(Assets.manager.get(Assets.IBM_TEXTURE));
         setSize(100,100);
-
         setPosition(x-getWidth()/2, y-getHeight()/2);
     }
+
+
 
     @Override
     public void act(float delta) {
