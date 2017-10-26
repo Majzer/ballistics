@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
@@ -10,12 +11,29 @@ import com.mygdx.game.MyBaseClasses.Game.MyGame;
 
 public class MyGdxGame extends MyGame {
 
+    public Button.ButtonStyle getButtonStyleV0_2() {
+        Button.ButtonStyle ButtonStyle = new TextButton.TextButtonStyle();
+        ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_2_TEXTURE)));
+        ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_2_TEXTURE)));
+        ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTONDOWN_2_TEXTURE)));
+        return ButtonStyle;
+    }
+
+    public Button.ButtonStyle getButtonStyleV0_1() {
+        Button.ButtonStyle ButtonStyle = new TextButton.TextButtonStyle();
+        ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_1_TEXTURE)));
+        ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_1_TEXTURE)));
+        ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTONDOWN_1_TEXTURE)));
+        return ButtonStyle;
+    }
+
+
 	public TextButton.TextButtonStyle getTextButtonStyle() {
 		TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
 		textButtonStyle.font = Assets.manager.get(Assets.ARIAL_30_FONT);
-		textButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE)));
-		textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE)));
-		textButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.FLOPPYDISK_TEXTURE)));
+		textButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_1_TEXTURE)));
+		textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_1_TEXTURE)));
+		textButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTONDOWN_1_TEXTURE)));
 		return textButtonStyle;
 	}
 
@@ -35,6 +53,5 @@ public class MyGdxGame extends MyGame {
         Assets.prepare();
 		setScreen(new LoadingScreen(this));
 	}
-
 
 }
