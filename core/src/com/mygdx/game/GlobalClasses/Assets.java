@@ -50,6 +50,12 @@ public class Assets {
 	public static final AssetDescriptor<Texture> V0_BUTTONDOWN_2_TEXTURE
 			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb2_down.png", Texture.class);
 
+	public static final AssetDescriptor<Texture> SLIDER_TEXTURE
+			= new AssetDescriptor<Texture>("Gombok/slider/slider.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> KNOB_TEXTURE
+			= new AssetDescriptor<Texture>("Gombok/slider/knob.png", Texture.class);
+
 	public static final AssetDescriptor<Texture> IBM_TEXTURE
 			= new AssetDescriptor<Texture>("IBM.png", Texture.class);
 
@@ -111,6 +117,10 @@ public class Assets {
 		manager.load(V0_BUTTON_2_TEXTURE);
 
 		manager.load(V0_BUTTONDOWN_2_TEXTURE);
+
+		manager.load(SLIDER_TEXTURE);
+
+		manager.load(KNOB_TEXTURE);
 
 		manager.load(DOS1_TEXTURE);
 

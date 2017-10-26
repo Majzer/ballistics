@@ -28,6 +28,7 @@ public class FloppyActor extends OneSpriteStaticActor {
         setSize(50,50);
     }
 
+
     @Override
     public void act(float delta) {
         super.act(delta);

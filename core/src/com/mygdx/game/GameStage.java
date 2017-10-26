@@ -27,9 +27,6 @@ public class GameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                addActor(new FloppyActor(new Ballistics(x,y,controlStage.getSlider()),0));
-                addActor(new FloppyActor(new Ballistics(x,y,controlStage.getSlider()),1));
-                addActor(new IBMActor(event.getStageX(), event.getStageY()));
                 //if(i>0)
                 //getLastAdded().remove();
                 IBMActor ibmActor;
