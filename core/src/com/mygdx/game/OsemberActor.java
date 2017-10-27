@@ -22,7 +22,8 @@ public class OsemberActor extends OneSpriteStaticActor {
 
 
     public void doAngry(GameStage gameStage){
-        final Label label = new Label("Nem tudok olyan messze dobni!", gameStage.getLabelStyle()){
+        gameStage.controlStage.addActor(new InfoLabelActor("Nem tudok olyan messze dobni!", 20,300, gameStage.getLabelStyle()));
+        /*final Label label = new Label("Nem tudok olyan messze dobni!", gameStage.getLabelStyle()){
             public float elapsedTime= 0;
             @Override
             public void setVisible(boolean visible) {
@@ -45,5 +46,6 @@ public class OsemberActor extends OneSpriteStaticActor {
         label.setTouchable(Touchable.disabled);
         label.setVisible(true);
         gameStage.addActor(label);
+        */
     }
 }

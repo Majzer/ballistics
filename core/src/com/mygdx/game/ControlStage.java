@@ -40,6 +40,7 @@ public class ControlStage extends MyStage {
     public ControlStage(Batch batch, MyGdxGame game, final GameStage gameStage) {
         super(new ExtendViewport(1024,768), batch, game);
         this.gameStage = gameStage;
+        gameStage.setControlStage(this);
 
 
         /*
@@ -133,7 +134,7 @@ public class ControlStage extends MyStage {
         speedSlider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-100);
         speedSlider.setSize(600,20);
         addActor(speedSlider);
-
+        setCameraResetToLeftBottomOfScreen();
     }
 
 

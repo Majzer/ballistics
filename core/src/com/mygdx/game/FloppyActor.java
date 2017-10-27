@@ -58,6 +58,6 @@ public class FloppyActor extends OneSpriteStaticActor {
             ibmActor.decLife();
             getStage().getActors().removeValue(this, true);
         }
-        System.out.println("X=" + pos[0]+" Y="  + pos[1]);
+        //System.out.println("X=" + pos[0]+" Y="  + pos[1]);
     }
 }

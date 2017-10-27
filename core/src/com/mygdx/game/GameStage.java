@@ -26,6 +26,11 @@ import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 public class GameStage extends MyStage {
 
     Ballistics ballistics;
+
+    public void setControlStage(ControlStage controlStage) {
+        this.controlStage = controlStage;
+    }
+
     ControlStage controlStage;
     IBMActor ibmActor;
     OneSpriteStaticActor bg;
@@ -60,6 +65,9 @@ public class GameStage extends MyStage {
         float v0 = 10;
         int i = 0;
 
+    public float round(float f){
+        return ((float)((int)(f*10f)))/10f;
+    }
 
     public GameStage(final Batch batch, final MyGdxGame game) {
         super(new ExtendViewport(10.24f,7.68f), batch, game);
@@ -81,9 +89,11 @@ public class GameStage extends MyStage {
                     IBMActor ibmActor;
 
                     try {
-                        ibmActor = new IBMActor(x, y, getGameStage());
+                        ibmActor = new IBMActor(x, y, controlStage);
                         addActor(new FloppyActor(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0), 0, ibmActor, getGameStage()));
                         addActor(new FloppyActor(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0), 1, ibmActor, getGameStage()));
+                        controlStage.addActor(new InfoLabelActor("Távolság:" + round(x) + " m\n Magasság:"+round(y)+" m \n Szög (1): "+round(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0).getAnglesByDeg()[0])+"\n Szög (2): "+round(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0).getAnglesByDeg()[1])+"\n Sebesség:" + round(v0) +" m/s", x*100-100, y*100-80, game.getLabelStyle()));
+
                         addActor(ibmActor);
                     }
                     catch (Exception e)

@@ -4,6 +4,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -12,7 +13,9 @@ import com.mygdx.game.ControlStage;
 import com.mygdx.game.FloppyActor;
 import com.mygdx.game.GameStage;
 import com.mygdx.game.GlobalClasses.Assets;
+import com.mygdx.game.InfoLabelActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyActor;
+import com.mygdx.game.MyBaseClasses.Scene2D.MyStage;
 import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
@@ -63,11 +66,11 @@ public class IBMActor extends OneSpriteStaticActor {
         }
     }
 
-    public IBMActor(float x, float y, GameStage gameStage) {
+    public IBMActor(float x, float y, MyStage stage) {
         super(Assets.manager.get(Assets.IBM_TEXTURE));
-            setSize(1, 1);
-            setPosition(x - getWidth() / 2, y - getHeight() / 2);
-        final Label lblMagassag = new Label("", gameStage.getLabelStyle()){
+        setSize(1, 1);
+        setPosition(x - getWidth() / 2, y - getHeight() / 2);
+        /*final Label lblMagassag = new Label("", gameStage.getLabelStyle()){
 
             public float elapsedTime= 0;
 
@@ -88,12 +91,18 @@ public class IBMActor extends OneSpriteStaticActor {
                 }
             }
         };
+
         lblMagassag.setPosition(getX(),getY()-10);
         lblMagassag.setText("Magasság: "+getY());
         lblMagassag.setTouchable(Touchable.disabled);
-        lblMagassag.setVisible(true);
-        gameStage.addActor(lblMagassag);
-        final Label lblTavolsag = new Label("", gameStage.getLabelStyle()){
+        lblMagassag.setVisible(true);*/
+
+
+
+
+
+
+        /*final Label lblTavolsag = new Label("", gameStage.getLabelStyle()){
 
             public float elapsedTime= 0;
 
@@ -118,7 +127,7 @@ public class IBMActor extends OneSpriteStaticActor {
         lblTavolsag.setText("Távolság: "+getX());
         lblTavolsag.setTouchable(Touchable.disabled);
         lblTavolsag.setVisible(true);
-        gameStage.addActor(lblTavolsag);
+        gameStage.addActor(lblTavolsag);*/
     }
 
 /*
