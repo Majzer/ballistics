@@ -89,7 +89,7 @@ public class GameStage extends MyStage {
 
                     try {
                         InfoLabelActor infoLabelActor;
-                        controlStage.addActor(infoLabelActor = new InfoLabelActor("Távolság:" + round(x) + " m\n Magasság:"+round(y)+" m \n Szög (1): "+round(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0).getAnglesByDeg()[0])+"\n Szög (2): "+round(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0).getAnglesByDeg()[1])+"\n Sebesség:" + round(v0) +" m/s", x*100+50, y*100-100, game.getLabelStyle()));
+                        controlStage.addActor(infoLabelActor = new InfoLabelActor("Távolság: " + round(x) + " m\n Magasság: "+round(y)+" m \n Szög (1): "+round(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0).getAnglesByDeg()[0])+"°°\n Szög (2): "+round(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0).getAnglesByDeg()[1])+"°\n Sebesség: " + round(v0) +" m/s", x*100+50, y*100-100, game.getLabelStyle()));
                         ibmActor = new IBMActor(x, y, infoLabelActor, getGameStage());
                         addActor(new FloppyActor(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0), 0, ibmActor, getGameStage()));
                         addActor(new FloppyActor(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0), 1, ibmActor, getGameStage()));
