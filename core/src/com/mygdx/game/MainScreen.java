@@ -18,6 +18,7 @@ import com.mygdx.game.MyBaseClasses.DosActor;
 import com.mygdx.game.MyBaseClasses.IBMActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyScreen;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyStage;
+import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
 import javax.swing.text.html.ListView;
 
@@ -32,16 +33,20 @@ public class MainScreen extends MyScreen {
     GameStage gameStage;
     ControlStage controlStage;
     Sound sound = Assets.manager.get(Assets.BACKGROUND_SOUND);
-    Texture hatter = Assets.manager.get(Assets.BACKGROUND_TEXTURE);
-    SpriteBatch spriteBatch = new SpriteBatch();
+
+    //Texture hatter = Assets.manager.get(Assets.BACKGROUND_TEXTURE);
+    //SpriteBatch spriteBatch = new SpriteBatch();
 
     public MainScreen(MyGdxGame game) {
         super(game);
         setBackGroundColor(0.5f, 0.2f,0f);
 
+
+
+
         gameStage = new GameStage(spriteBatch, game);
         controlStage = new ControlStage(spriteBatch, game, gameStage);
-        sound.loop(50);
+        sound.loop(25);
         InputMultiplexer im = new InputMultiplexer();
         im.addProcessor(controlStage);
         im.addProcessor(gameStage);
@@ -52,9 +57,9 @@ public class MainScreen extends MyScreen {
     @Override
     public void render(float delta) {
         super.render(delta);
-        spriteBatch.begin();
-        spriteBatch.draw(hatter,0,0);
-        spriteBatch.end();
+        //spriteBatch.begin();
+        //spriteBatch.draw(hatter,0,0);
+        //spriteBatch.end();
         gameStage.act(delta);
         gameStage.draw();
         controlStage.act(delta);

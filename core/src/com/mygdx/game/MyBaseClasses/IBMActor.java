@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.Ballistics;
 import com.mygdx.game.ControlStage;
+import com.mygdx.game.FloppyActor;
 import com.mygdx.game.GameStage;
 import com.mygdx.game.GlobalClasses.Assets;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyActor;
@@ -36,21 +37,19 @@ public class IBMActor extends OneSpriteStaticActor {
     ControlStage controlStage;
 
     int life = 2, vel=1;
-
+    public static boolean letrehozta=true;
 
     public int vel(int a, int b) {
         return (int)Math.floor(Math.random()*(b-a+1)+a);
     }
 
-
-
     public void decLife(){
         life--;
         if (life==1){
-        soundFlopi1.play(150);
+        soundFlopi1.play(300);
         }
         if (life==0){
-            soundFlopi2.play(200);
+            soundFlopi2.play(300);
             soundXP.play();
             vel = vel(1,3);
             if(vel==1) {
@@ -64,9 +63,10 @@ public class IBMActor extends OneSpriteStaticActor {
 
     public IBMActor(float x, float y) {
         super(Assets.manager.get(Assets.IBM_TEXTURE));
-        setSize(100, 100);
-        setPosition(x - getWidth() / 2, y - getHeight() / 2);
+            setSize(1, 1);
+            setPosition(x - getWidth() / 2, y - getHeight() / 2);
     }
+
 /*
     public IBMActor(float x, float y, final GameStage gameStage) {
         super(Assets.manager.get(Assets.IBM_TEXTURE));
@@ -80,7 +80,10 @@ public class IBMActor extends OneSpriteStaticActor {
     @Override
     public void act(float delta) {
         super.act(delta);
-        setSize(getWidth() + (float)Math.sin(elapsedTime*10)/4, getHeight() + (float)Math.sin(elapsedTime*10)/4);
-
+        setSize(getWidth() + (float)Math.cos(elapsedTime*10)/40, getHeight() + (float)Math.sin(elapsedTime*10)/40);
+     /*   if(!letrehozta) {
+            getStage().getActors().removeValue(this, true);
+            letrehozta = true;
+        } */
     }
 }

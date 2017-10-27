@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -76,8 +77,9 @@ public class ControlStage extends MyStage {
         buttonSzog.setPosition(0,0);
 
         //V0 változtató slider
-        final MySlider slider = new MySlider(1,200, 1, false, game.getSliderStyle());
-        slider.setValue(100);
+        final MySlider slider = new MySlider(1,50, 0.01f, false, game.getSliderStyle());
+        slider.setValue(25);
+        gameStage.setV0(slider.getValue());
         slider.addCaptureListener(new ChangeListener() {
             @Override
             public void changed(ChangeListener.ChangeEvent event, Actor actor) {
@@ -87,12 +89,23 @@ public class ControlStage extends MyStage {
             }
         });
         slider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-50);
+        slider.setUnits("m/s");
         slider.setSize(600,20);
         //slider.setValue(100);
         addActor(slider);
-
-
-
+        final MySlider speedSlider = new MySlider(0.01f, 1,0.001f, false,game.getSliderStyle());
+        speedSlider.setValue(1);
+        speedSlider.setUnits("x speed");
+        gameStage.setTimeScale(speedSlider.getValue());
+        speedSlider.addCaptureListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeListener.ChangeEvent event, Actor actor) {
+                gameStage.setTimeScale(speedSlider.getValue());
+            }
+        });
+        speedSlider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-100);
+        speedSlider.setSize(600,20);
+        addActor(speedSlider);
 
     }
 
@@ -100,6 +113,5 @@ public class ControlStage extends MyStage {
 
     @Override
     public void init() {
-
     }
 }

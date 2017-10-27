@@ -3,6 +3,7 @@ package com.mygdx.game.MyBaseClasses;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
@@ -20,6 +21,16 @@ public class MySlider extends Slider implements InitableInterface{
         super(min, max, stepSize, vertical, skin);
         init();
     }
+
+    public String getUnits() {
+        return units;
+    }
+
+    public void setUnits(String units) {
+        this.units = units;
+    }
+
+    String units = " units";
 
     public MySlider(float min, float max, float stepSize, boolean vertical, Skin skin, String styleName) {
         super(min, max, stepSize, vertical, skin, styleName);
@@ -59,7 +70,7 @@ public class MySlider extends Slider implements InitableInterface{
                 }
             }
         };
-        label.setVisible(false);
+
         addListener(new ClickListener(){
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
@@ -80,11 +91,12 @@ public class MySlider extends Slider implements InitableInterface{
         addCaptureListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                label.setText(getValue() + " m/s");
+                label.setTouchable(Touchable.disabled);
+                label.setText(((float)((int)(getValue()*10)))/10f + " " + units);
                 label.setPosition(getX()+getPercent()*getWidth()-40, getY()-getHeight()-20);
                 label.setVisible(true);
-
             }
         });
     }
+
 }

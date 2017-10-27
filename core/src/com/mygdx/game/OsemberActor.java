@@ -12,7 +12,11 @@ public class OsemberActor extends OneSpriteStaticActor {
 
     public OsemberActor(Texture texture) {
         super(texture);
-        setSize(180, 360);
-        setPosition(texture.getWidth(), texture.getHeight()+85);
+        setSize(1.80f, 3.60f);
+        setPosition(0, 0.85f);
+    }
+
+    public void doAngry(){
+        System.out.println("Mérges");
     }
 }

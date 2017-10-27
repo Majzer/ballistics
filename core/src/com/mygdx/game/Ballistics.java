@@ -24,7 +24,7 @@ public class Ballistics {
 
 
 
-    float x, y, v0=1f;
+    float x, y, v0;
     float g = 9.81f;
 
     public void setV0(float v0) {
@@ -62,11 +62,15 @@ public class Ballistics {
     }
 
 
-    public Ballistics(float x, float y, float v0) {
+    public Ballistics(float x, float y, float v0) throws Exception {
         this.x = x;
         this.y = y;
         this.v0 = v0;
-        System.out.println(v0);
+        System.out.println(getXYbyTime(0,0)[0]);
+
+        if (Float.isNaN(getXYbyTime(0,0)[0])){
+            throw new Exception("Nem lehet ekkorát dobni.");
+        }
     }
 
     public void testFlight(int indexOfAngles){
@@ -81,7 +85,12 @@ public class Ballistics {
 
     public static void main(String[] args) {
 
-        Ballistics test = new Ballistics(2, 1, 7.9f);
+        Ballistics test = null;
+        try {
+            test = new Ballistics(2, 1, 7.9f);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         System.out.println(test.getAnglesByDeg()[0]);
         System.out.println(test.getAnglesByDeg()[1]);
         System.out.println(test.getTimeOfFlight(0));

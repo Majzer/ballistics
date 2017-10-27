@@ -31,9 +31,9 @@ public class Assets {
 		fontParameter.fontParameters.characters = CHARS;
 		fontParameter.fontParameters.color = Color.WHITE;
 	}
+
 	public static final AssetDescriptor<BitmapFont> ARIAL_30_FONT
 			= new AssetDescriptor<BitmapFont>(fontParameter.fontFileName, BitmapFont.class, fontParameter);
-
 
 	public static final AssetDescriptor<Texture> FLOPPYDISK_TEXTURE
 			= new AssetDescriptor<Texture>("floppy.png", Texture.class);
