@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -136,9 +137,23 @@ public class ControlStage extends MyStage {
     }
 
 
+    public Label.LabelStyle getLabelStyle() {
+        Label.LabelStyle style;
+        style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
+        style.font = Assets.manager.get(Assets.ARIAL_30_FONT);
+        style.fontColor = Color.WHITE;
+        return style;
+    }
 
     @Override
     public void init() {
-
+        final Label lblV0 = new Label("Kilövési sebesség", getLabelStyle());
+        lblV0.setPosition(getViewport().getWorldWidth()/2-475, getViewport().getWorldHeight()-55);
+        lblV0.setTouchable(Touchable.disabled);
+        addActor(lblV0);
+        final Label lblSpeed = new Label("Lejátszási sebesség", getLabelStyle());
+        lblSpeed.setPosition(getViewport().getWorldWidth()/2-475, getViewport().getWorldHeight()-105);
+        lblSpeed.setTouchable(Touchable.disabled);
+        addActor(lblSpeed);
     }
 }

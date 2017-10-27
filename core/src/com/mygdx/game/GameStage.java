@@ -100,7 +100,6 @@ public class GameStage extends MyStage {
     }
 
     @Override
-    public void init() {
-
+    public void init(){
     }
 }
