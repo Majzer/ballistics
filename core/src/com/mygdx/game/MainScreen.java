@@ -7,6 +7,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -28,6 +29,8 @@ public class MainScreen extends MyScreen {
     ControlStage controlStage;
     IBMActor ibmActor;
     Sound sound = Assets.manager.get(Assets.BACKGROUND_SOUND);
+    Texture hatter = Assets.manager.get(Assets.BACKGROUND_TEXTURE);
+    SpriteBatch spriteBatch = new SpriteBatch();
 
     public MainScreen(MyGdxGame game) {
         super(game);
@@ -45,6 +48,9 @@ public class MainScreen extends MyScreen {
     @Override
     public void render(float delta) {
         super.render(delta);
+        spriteBatch.begin();
+        spriteBatch.draw(hatter,0,0);
+        spriteBatch.end();
         gameStage.act(delta);
         gameStage.draw();
         controlStage.act(delta);
