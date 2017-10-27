@@ -36,7 +36,7 @@ public class Assets {
 
 
 	public static final AssetDescriptor<Texture> FLOPPYDISK_TEXTURE
-			= new AssetDescriptor<Texture>("floppy.png", Texture.class);
+			= new AssetDescriptor<Texture>("actor/floppy.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> V0_BUTTON_1_TEXTURE
 			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb1.png", Texture.class);
@@ -57,40 +57,40 @@ public class Assets {
 			= new AssetDescriptor<Texture>("Gombok/slider/knob.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> IBM_TEXTURE
-			= new AssetDescriptor<Texture>("ibm_pc.png", Texture.class);
+			= new AssetDescriptor<Texture>("actor/ibm_pc.png", Texture.class);
 
     public static final AssetDescriptor<Texture> DOS1_TEXTURE
-            = new AssetDescriptor<Texture>("DOS1.png", Texture.class);
+            = new AssetDescriptor<Texture>("actor/DOS1.png", Texture.class);
 
     public static final AssetDescriptor<Texture> DOS2_TEXTURE
-            = new AssetDescriptor<Texture>("DOS2.png", Texture.class);
+            = new AssetDescriptor<Texture>("actor/DOS2.png", Texture.class);
 
     public static final AssetDescriptor<Texture> DOS3_TEXTURE
-            = new AssetDescriptor<Texture>("DOS3.jpg", Texture.class);
+            = new AssetDescriptor<Texture>("actor/DOS3.jpg", Texture.class);
 
 	public static final AssetDescriptor<Texture> SZOG_TEXTURE
-			= new AssetDescriptor<Texture>("szog.png", Texture.class);
+			= new AssetDescriptor<Texture>("Gombok/szog.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> BACKGROUND_TEXTURE
-			= new AssetDescriptor<Texture>("background.png", Texture.class);
+			= new AssetDescriptor<Texture>("hatter/background.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> OSEMBER_TEXTURE
-			= new AssetDescriptor<Texture>("Osember.png", Texture.class);
+			= new AssetDescriptor<Texture>("actor/Osember_01.png", Texture.class);
 
 	public static final AssetDescriptor<Sound> STAR_SOUND
-			= new AssetDescriptor<Sound>("star.wav", Sound.class);
+			= new AssetDescriptor<Sound>("hangok/star.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> BACKGROUND_SOUND
-			= new AssetDescriptor<Sound>("backgroundmusic.wav", Sound.class);
+			= new AssetDescriptor<Sound>("hangok/backgroundmusic.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> XP_SOUND
-			= new AssetDescriptor<Sound>("xp.wav", Sound.class);
+			= new AssetDescriptor<Sound>("hangok/xp.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> FLOPI1_SOUND
-			= new AssetDescriptor<Sound>("flopi1.wav", Sound.class);
+			= new AssetDescriptor<Sound>("hangok/flopi1.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> FLOPI2_SOUND
-			= new AssetDescriptor<Sound>("flopi2.wav", Sound.class);
+			= new AssetDescriptor<Sound>("hangok/flopi2.wav", Sound.class);
 
 
     public static void prepare() {
