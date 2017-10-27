@@ -1,7 +1,9 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
@@ -55,6 +57,14 @@ public class MyGdxGame extends MyGame {
 		sliderStyle.background = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SLIDER_TEXTURE)));
 		return sliderStyle;
 	}
+
+    public Label.LabelStyle getLabelStyle() {
+        Label.LabelStyle style;
+        style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
+        style.font = Assets.manager.get(Assets.ARIAL_30_FONT);
+        style.fontColor = Color.YELLOW;
+        return style;
+    }
 
 
 
