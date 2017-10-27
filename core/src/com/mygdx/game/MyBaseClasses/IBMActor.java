@@ -35,11 +35,11 @@ public class IBMActor extends OneSpriteStaticActor {
 
     ControlStage controlStage;
 
-    int life = 2, vel;
+    int life = 2, vel=1;
 
 
     public int vel(int a, int b) {
-        return (int)Math.random()*(b-a+1)+a;
+        return (int)Math.floor(Math.random()*(b-a+1)+a);
     }
 
 
@@ -50,14 +50,14 @@ public class IBMActor extends OneSpriteStaticActor {
         soundFlopi1.play(150);
         }
         if (life==0){
-            soundFlopi2.play(150);
+            soundFlopi2.play(200);
             soundXP.play();
-            vel = 1;
-            switch(vel){
-                case 1: getStage().addActor(new DosActor(dos1));
-                case 2: getStage().addActor(new DosActor(dos2));
-                case 3: getStage().addActor(new DosActor(dos3));
-            }
+            vel = vel(1,3);
+            if(vel==1) {
+                getStage().addActor(new DosActor(dos1));
+            } else if(vel==2) {
+                getStage().addActor(new DosActor(dos2));
+            } else getStage().addActor(new DosActor(dos3));
             getStage().getActors().removeValue(this, true);
         }
     }
