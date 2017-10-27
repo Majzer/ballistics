@@ -13,57 +13,6 @@ import com.mygdx.game.MyBaseClasses.Game.MyGame;
 
 public class MyGdxGame extends MyGame {
 
-    public Button.ButtonStyle getButtonStyleV0_2() {
-        Button.ButtonStyle ButtonStyle = new TextButton.TextButtonStyle();
-        ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_2_TEXTURE)));
-        ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_2_TEXTURE)));
-        ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTONDOWN_2_TEXTURE)));
-        return ButtonStyle;
-    }
-
-    public Button.ButtonStyle getButtonStyleV0_1() {
-        Button.ButtonStyle ButtonStyle = new TextButton.TextButtonStyle();
-        ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_1_TEXTURE)));
-        ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_1_TEXTURE)));
-        ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTONDOWN_1_TEXTURE)));
-        return ButtonStyle;
-    }
-
-	public Button.ButtonStyle getButtonStyleSzog() {
-		Button.ButtonStyle ButtonStyle = new Button.ButtonStyle();
-		ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SZOG_TEXTURE)));
-		ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SZOG_TEXTURE)));
-		ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SZOG_TEXTURE)));
-		return ButtonStyle;
-	}
-
-	public Button.ButtonStyle getButtonStyleCelmag() {
-		Button.ButtonStyle ButtonStyle = new Button.ButtonStyle();
-		ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELMAG_TEXTURE)));
-		ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELMAG_TEXTURE)));
-		ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELMAG_TEXTURE)));
-		return ButtonStyle;
-	}
-
-	public Button.ButtonStyle getButtonStyleCeltav() {
-		Button.ButtonStyle ButtonStyle = new Button.ButtonStyle();
-		ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELTAV_TEXTURE)));
-		ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELTAV_TEXTURE)));
-		ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELTAV_TEXTURE)));
-		return ButtonStyle;
-	}
-
-	public TextButton.TextButtonStyle getTextButtonStyle() {
-		TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
-		textButtonStyle.font = Assets.manager.get(Assets.ARIAL_30_FONT);
-		textButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_1_TEXTURE)));
-		textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTON_1_TEXTURE)));
-		textButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.V0_BUTTONDOWN_1_TEXTURE)));
-		return textButtonStyle;
-	}
-
-
-
 	public Slider.SliderStyle getSliderStyle(){
 		Slider.SliderStyle sliderStyle = new Slider.SliderStyle();
 		sliderStyle.knobDown = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.KNOB_TEXTURE)));
@@ -77,7 +26,7 @@ public class MyGdxGame extends MyGame {
         Label.LabelStyle style;
         style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
         style.font = Assets.manager.get(Assets.ARIAL_30_FONT);
-        style.fontColor = Color.YELLOW;
+        style.fontColor = Color.RED;
         return style;
     }
 

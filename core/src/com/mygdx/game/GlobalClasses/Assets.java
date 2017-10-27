@@ -32,34 +32,22 @@ public class Assets {
 		fontParameter.fontParameters.color = Color.WHITE;
 	}
 
-	static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter2 = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
+	static final FreetypeFontLoader.FreeTypeFontLoaderParameter font15Parameter = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
 	static {
-		fontParameter2.fontFileName = "arial.ttf";
-		fontParameter2.fontParameters.size = 30;
-		fontParameter2.fontParameters.characters = CHARS;
-		fontParameter2.fontParameters.color = Color.WHITE;
+		font15Parameter.fontFileName = "arial.ttf";
+		font15Parameter.fontParameters.size = 15;
+		font15Parameter.fontParameters.characters = CHARS;
+		font15Parameter.fontParameters.color = Color.WHITE;
 	}
-
-	public static final AssetDescriptor<BitmapFont> ARIAL_15_FONT
-			= new AssetDescriptor<BitmapFont>(fontParameter2.fontFileName, BitmapFont.class, fontParameter2);
 
 	public static final AssetDescriptor<BitmapFont> ARIAL_30_FONT
 			= new AssetDescriptor<BitmapFont>(fontParameter.fontFileName, BitmapFont.class, fontParameter);
 
+	public static final AssetDescriptor<BitmapFont> ARIAL_15_FONT
+			= new AssetDescriptor<BitmapFont>(font15Parameter.fontFileName, BitmapFont.class, font15Parameter);
+
 	public static final AssetDescriptor<Texture> FLOPPYDISK_TEXTURE
-			= new AssetDescriptor<Texture>("segedletek/Floppy_Disk.png", Texture.class);
-
-	public static final AssetDescriptor<Texture> V0_BUTTON_1_TEXTURE
-			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb1.png", Texture.class);
-
-	public static final AssetDescriptor<Texture> V0_BUTTONDOWN_1_TEXTURE
-			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb1_down.png", Texture.class);
-
-	public static final AssetDescriptor<Texture> V0_BUTTON_2_TEXTURE
-			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb2.png", Texture.class);
-
-	public static final AssetDescriptor<Texture> V0_BUTTONDOWN_2_TEXTURE
-			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb2_down.png", Texture.class);
+			= new AssetDescriptor<Texture>("actor/floppy.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> SLIDER_TEXTURE
 			= new AssetDescriptor<Texture>("Gombok/slider/slider_01.png", Texture.class);
@@ -79,35 +67,26 @@ public class Assets {
     public static final AssetDescriptor<Texture> DOS3_TEXTURE
             = new AssetDescriptor<Texture>("actor/DOS3.jpg", Texture.class);
 
-	public static final AssetDescriptor<Texture> SZOG_TEXTURE
-			= new AssetDescriptor<Texture>("Gombok/szog.png", Texture.class);
-
 	public static final AssetDescriptor<Texture> BACKGROUND_TEXTURE
 			= new AssetDescriptor<Texture>("hatter/background.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> OSEMBER_TEXTURE
 			= new AssetDescriptor<Texture>("actor/Osember_01.png", Texture.class);
 
-	public static final AssetDescriptor<Texture> CELMAG_TEXTURE
-			= new AssetDescriptor<Texture>("Gombok/cel_mag.png", Texture.class);
-
-	public static final AssetDescriptor<Texture> CELTAV_TEXTURE
-			= new AssetDescriptor<Texture>("Gombok/cel_tav.png", Texture.class);
-
 	public static final AssetDescriptor<Sound> STAR_SOUND
-			= new AssetDescriptor<Sound>("Hangok/star.wav", Sound.class);
+			= new AssetDescriptor<Sound>("hangok/star.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> BACKGROUND_SOUND
-			= new AssetDescriptor<Sound>("Hangok/backgroundmusic.wav", Sound.class);
+			= new AssetDescriptor<Sound>("hangok/backgroundmusic.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> XP_SOUND
-			= new AssetDescriptor<Sound>("Hangok/xp.wav", Sound.class);
+			= new AssetDescriptor<Sound>("hangok/xp.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> FLOPI1_SOUND
-			= new AssetDescriptor<Sound>("Hangok/flopi1.wav", Sound.class);
+			= new AssetDescriptor<Sound>("hangok/flopi1.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> FLOPI2_SOUND
-			= new AssetDescriptor<Sound>("Hangok/flopi2.wav", Sound.class);
+			= new AssetDescriptor<Sound>("hangok/flopi2.wav", Sound.class);
 
 
     public static void prepare() {
@@ -127,8 +106,6 @@ public class Assets {
 
 		manager.load(ARIAL_30_FONT);
 
-		manager.load(ARIAL_15_FONT);
-
 		manager.load(STAR_SOUND);
 
 		manager.load(BACKGROUND_SOUND);
@@ -138,14 +115,6 @@ public class Assets {
 		manager.load(FLOPI1_SOUND);
 
 		manager.load(FLOPI2_SOUND);
-
-		manager.load(V0_BUTTON_1_TEXTURE);
-
-		manager.load(V0_BUTTONDOWN_1_TEXTURE);
-
-		manager.load(V0_BUTTON_2_TEXTURE);
-
-		manager.load(V0_BUTTONDOWN_2_TEXTURE);
 
 		manager.load(SLIDER_TEXTURE);
 
@@ -157,15 +126,9 @@ public class Assets {
 
 		manager.load(DOS3_TEXTURE);
 
-		manager.load(SZOG_TEXTURE);
-
 		manager.load(BACKGROUND_TEXTURE);
 
 		manager.load(OSEMBER_TEXTURE);
-
-		manager.load(CELMAG_TEXTURE);
-
-		manager.load(CELTAV_TEXTURE);
 	}
 
     public static void afterLoaded() {

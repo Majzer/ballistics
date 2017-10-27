@@ -35,6 +35,10 @@ public class Ballistics {
         return v0;
     }
 
+    public float[] getDeg(){
+        return getAnglesByDeg();
+    }
+
 
 
     public float[] getAnglesByRad() {
@@ -98,7 +102,5 @@ public class Ballistics {
         test.testFlight(1);
 
     }
-
-
 
 }

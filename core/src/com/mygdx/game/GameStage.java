@@ -61,7 +61,6 @@ public class GameStage extends MyStage {
     }
 
 
-
         float v0 = 10;
         int i = 0;
 
@@ -123,6 +122,5 @@ public class GameStage extends MyStage {
 
     @Override
     public void init() {
-
     }
 }

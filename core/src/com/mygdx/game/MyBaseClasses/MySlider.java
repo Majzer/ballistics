@@ -45,7 +45,7 @@ public class MySlider extends Slider implements InitableInterface{
         Label.LabelStyle style;
         style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
         style.font = Assets.manager.get(Assets.ARIAL_30_FONT);
-        style.fontColor = Color.YELLOW;
+        style.fontColor = Color.RED;
         return style;
     }
     @Override
