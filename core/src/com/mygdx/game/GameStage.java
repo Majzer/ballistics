@@ -42,6 +42,7 @@ public class GameStage extends MyStage {
 
     public GameStage(final Batch batch, final MyGdxGame game) {
         super(new ExtendViewport(1024,768), batch, game);
+        addActor(new OsemberActor(Assets.manager.get(Assets.OSEMBER_TEXTURE)));
         addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {

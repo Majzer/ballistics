@@ -31,8 +31,6 @@ public class MainScreen extends MyScreen {
 
     GameStage gameStage;
     ControlStage controlStage;
-    IBMActor ibmActor;
-    Assets assets;
     Sound sound = Assets.manager.get(Assets.BACKGROUND_SOUND);
     Texture hatter = Assets.manager.get(Assets.BACKGROUND_TEXTURE);
     SpriteBatch spriteBatch = new SpriteBatch();

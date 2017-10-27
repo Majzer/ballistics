@@ -74,6 +74,9 @@ public class Assets {
 	public static final AssetDescriptor<Texture> BACKGROUND_TEXTURE
 			= new AssetDescriptor<Texture>("background.png", Texture.class);
 
+	public static final AssetDescriptor<Texture> OSEMBER_TEXTURE
+			= new AssetDescriptor<Texture>("Osember.png", Texture.class);
+
 	public static final AssetDescriptor<Sound> STAR_SOUND
 			= new AssetDescriptor<Sound>("star.wav", Sound.class);
 
@@ -88,6 +91,7 @@ public class Assets {
 
 	public static final AssetDescriptor<Sound> FLOPI2_SOUND
 			= new AssetDescriptor<Sound>("flopi2.wav", Sound.class);
+
 
     public static void prepare() {
 		manager = new AssetManager();
@@ -137,6 +141,8 @@ public class Assets {
 		manager.load(SZOG_TEXTURE);
 
 		manager.load(BACKGROUND_TEXTURE);
+
+		manager.load(OSEMBER_TEXTURE);
 	}
 
     public static void afterLoaded() {
