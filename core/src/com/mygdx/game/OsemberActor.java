@@ -11,6 +11,7 @@ import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
 public class OsemberActor extends OneSpriteStaticActor {
 
+    public InfoLabelActor infoLabelActor;
 
     public OsemberActor(Texture texture) {
         super(texture);
@@ -22,7 +23,20 @@ public class OsemberActor extends OneSpriteStaticActor {
 
 
     public void doAngry(GameStage gameStage){
-        gameStage.controlStage.addActor(new InfoLabelActor("Nem tudok olyan messze dobni!", 20,300, gameStage.getLabelStyle()));
+        setElapsedTime(0);
+        if (infoLabelActor == null){
+            ((GameStage)getStage()).controlStage.addActor(infoLabelActor = new InfoLabelActor("Nem tudok olyan messze dobni!", 20,300, ((GameStage)getStage()).getLabelStyle()){
+                @Override
+                public void act(float delta) {
+                    super.act(delta);
+                    if (elapsedTime>2){
+                        setVisible(false);
+                    }
+                }
+            });
+        }else{
+            infoLabelActor.setVisible(true);
+        }
         /*final Label label = new Label("Nem tudok olyan messze dobni!", gameStage.getLabelStyle()){
             public float elapsedTime= 0;
             @Override
