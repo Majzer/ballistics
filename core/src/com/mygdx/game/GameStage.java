@@ -89,10 +89,11 @@ public class GameStage extends MyStage {
                     IBMActor ibmActor;
 
                     try {
-                        ibmActor = new IBMActor(x, y, getGameStage());
+                        InfoLabelActor infoLabelActor;
+                        controlStage.addActor(infoLabelActor = new InfoLabelActor("Távolság:" + round(x) + " m\n Magasság:"+round(y)+" m \n Szög (1): "+round(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0).getAnglesByDeg()[0])+"\n Szög (2): "+round(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0).getAnglesByDeg()[1])+"\n Sebesség:" + round(v0) +" m/s", x*100+50, y*100-100, game.getLabelStyle()));
+                        ibmActor = new IBMActor(x, y, infoLabelActor);
                         addActor(new FloppyActor(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0), 0, ibmActor, getGameStage()));
                         addActor(new FloppyActor(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0), 1, ibmActor, getGameStage()));
-                        controlStage.addActor(new InfoLabelActor("Távolság:" + round(x) + " m\n Magasság:"+round(y)+" m \n Szög (1): "+round(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0).getAnglesByDeg()[0])+"\n Szög (2): "+round(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0).getAnglesByDeg()[1])+"\n Sebesség:" + round(v0) +" m/s", x*100-100, y*100-80, game.getLabelStyle()));
 
                         addActor(ibmActor);
                     }
@@ -115,8 +116,8 @@ public class GameStage extends MyStage {
     public Label.LabelStyle getLabelStyle() {
         Label.LabelStyle style;
         style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
-        style.font = Assets.manager.get(Assets.ARIAL_15_FONT);
-        style.fontColor = Color.RED;
+        style.font = Assets.manager.get(Assets.ARIAL_30_FONT);
+        style.fontColor = Color.WHITE;
         return style;
     }
 

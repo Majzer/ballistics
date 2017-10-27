@@ -33,7 +33,7 @@ public class InfoLabelActor extends Label {
         super.act(delta);
         setFontScale(FONT_SCALE + (float) Math.sin(elapsedTime * 5.0f) * MAGNIFY);
         if (elapsedTime>3){
-            getStage().getActors().removeValue(this, true);
+            //getStage().getActors().removeValue(this, true);
         }
     }
 }

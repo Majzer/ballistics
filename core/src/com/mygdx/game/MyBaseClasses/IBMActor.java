@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.Ballistics;
 import com.mygdx.game.ControlStage;
@@ -36,9 +37,9 @@ public class IBMActor extends OneSpriteStaticActor {
     Texture dos1 = Assets.manager.get(Assets.DOS1_TEXTURE);
     Texture dos2 = Assets.manager.get(Assets.DOS2_TEXTURE);
     Texture dos3 = Assets.manager.get(Assets.DOS3_TEXTURE);
+    InfoLabelActor info;
 
     Ballistics ballistics;
-    GameStage gameStage;
 
     ControlStage controlStage;
 
@@ -59,19 +60,20 @@ public class IBMActor extends OneSpriteStaticActor {
             soundXP.play();
             vel = vel(1,3);
             if(vel==1) {
-                getStage().addActor(new DosActor(dos1, getX(), getY(), gameStage));
+                getStage().addActor(new DosActor(dos1, getX(), getY()));
             } else if(vel==2) {
-                getStage().addActor(new DosActor(dos2, getX(), getY(), gameStage));
-            } else getStage().addActor(new DosActor(dos3, getX(), getY(), gameStage));
+                getStage().addActor(new DosActor(dos2, getX(), getY()));
+            } else getStage().addActor(new DosActor(dos3, getX(), getY()));
             getStage().getActors().removeValue(this, true);
+            info.getStage().getActors().removeValue(info, true);
         }
     }
 
-    public IBMActor(float x, float y, GameStage gameStage) {
+    public IBMActor(float x, float y, InfoLabelActor info) {
         super(Assets.manager.get(Assets.IBM_TEXTURE));
+        this.info = info;
         setSize(1, 1);
         setPosition(x - getWidth() / 2, y - getHeight() / 2);
-        this.gameStage = gameStage;
         /*final Label lblMagassag = new Label("", gameStage.getLabelStyle()){
 
             public float elapsedTime= 0;
@@ -151,4 +153,6 @@ public class IBMActor extends OneSpriteStaticActor {
             letrehozta = true;
         } */
     }
+
+
 }
