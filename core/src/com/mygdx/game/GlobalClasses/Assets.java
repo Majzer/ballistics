@@ -95,19 +95,19 @@ public class Assets {
 			= new AssetDescriptor<Texture>("Gombok/cel_tav.png", Texture.class);
 
 	public static final AssetDescriptor<Sound> STAR_SOUND
-			= new AssetDescriptor<Sound>("hangok/star.wav", Sound.class);
+			= new AssetDescriptor<Sound>("Hangok/star.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> BACKGROUND_SOUND
-			= new AssetDescriptor<Sound>("hangok/backgroundmusic.wav", Sound.class);
+			= new AssetDescriptor<Sound>("Hangok/backgroundmusic.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> XP_SOUND
-			= new AssetDescriptor<Sound>("hangok/xp.wav", Sound.class);
+			= new AssetDescriptor<Sound>("Hangok/xp.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> FLOPI1_SOUND
-			= new AssetDescriptor<Sound>("hangok/flopi1.wav", Sound.class);
+			= new AssetDescriptor<Sound>("Hangok/flopi1.wav", Sound.class);
 
 	public static final AssetDescriptor<Sound> FLOPI2_SOUND
-			= new AssetDescriptor<Sound>("hangok/flopi2.wav", Sound.class);
+			= new AssetDescriptor<Sound>("Hangok/flopi2.wav", Sound.class);
 
 
     public static void prepare() {

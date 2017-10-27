@@ -93,7 +93,7 @@ public class GameStage extends MyStage {
                     {
                         System.out.println(e.toString());
                         ibmActor = null;
-                        osemberActor.doAngry();
+                        osemberActor.doAngry(getGameStage());
                     }
 
                 }
@@ -108,8 +108,8 @@ public class GameStage extends MyStage {
     public Label.LabelStyle getLabelStyle() {
         Label.LabelStyle style;
         style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
-        style.font = Assets.manager.get(Assets.ARIAL_15_FONT);
-        style.fontColor = Color.WHITE;
+        style.font = Assets.manager.get(Assets.ARIAL_30_FONT);
+        style.fontColor = Color.YELLOW;
         return style;
     }
 
