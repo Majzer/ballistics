@@ -37,9 +37,8 @@ public class ControlStage extends MyStage {
     }
 
 
-
     public ControlStage(Batch batch, MyGdxGame game, final GameStage gameStage) {
-        super(new ExtendViewport(1024,768), batch, game);
+        super(new ExtendViewport(1024, 768), batch, game);
         this.gameStage = gameStage;
 
 
@@ -72,17 +71,39 @@ public class ControlStage extends MyStage {
         //Szükséges szög "gomb"
         Button buttonSzog;
         addActor(buttonSzog = new Button(game.getButtonStyleSzog()));
-        buttonSzog.addListener(new ClickListener(){
+        buttonSzog.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                //Röppályákat tartalmazó tömb 1. elemére mutató változó
             }
         });
-        buttonSzog.setPosition(5 , getViewport().getWorldHeight()-buttonSzog.getHeight()-20);
+        buttonSzog.setPosition(5, getViewport().getWorldHeight() - buttonSzog.getHeight() - 20);
+
+        //Cél magassága"gomb"
+        Button buttonCelmag;
+        addActor(buttonCelmag = new Button(game.getButtonStyleCelmag()));
+        buttonSzog.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+            }
+        });
+        buttonCelmag.setPosition(5, getViewport().getWorldHeight() - buttonSzog.getHeight() - buttonCelmag.getHeight() - 20);
+
+        //Cél távolsága"gomb"
+        Button buttonCeltav;
+        addActor(buttonCeltav = new Button(game.getButtonStyleCeltav()));
+        buttonSzog.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+            }
+        });
+        buttonCeltav.setPosition(5, getViewport().getWorldHeight() - buttonSzog.getHeight() - buttonCelmag.getHeight() - buttonCeltav.getMinHeight() - 20);
+
 
         //V0 változtató slider
-        final MySlider slider = new MySlider(1,200, 1, false, game.getSliderStyle());
+        final MySlider slider = new MySlider(1, 200, 1, false, game.getSliderStyle());
         slider.setValue(100);
         slider.addCaptureListener(new ChangeListener() {
             @Override
@@ -92,15 +113,13 @@ public class ControlStage extends MyStage {
                 gameStage.setV0(slider.getValue());
             }
         });
-        slider.setPosition(getViewport().getWorldWidth()/2-100, getViewport().getWorldHeight()-55);
-        slider.setSize(600,20);
+        slider.setPosition(getViewport().getWorldWidth() / 2 - 100, getViewport().getWorldHeight() - 55);
+        slider.setSize(600, 20);
         //slider.setValue(100);
         addActor(slider);
 
-
-
-
     }
+
 
 
     @Override

@@ -36,7 +36,7 @@ public class Assets {
 
 
 	public static final AssetDescriptor<Texture> FLOPPYDISK_TEXTURE
-			= new AssetDescriptor<Texture>("actor/floppy.png", Texture.class);
+			= new AssetDescriptor<Texture>("segedletek/Floppy_Disk.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> V0_BUTTON_1_TEXTURE
 			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb1.png", Texture.class);
@@ -76,6 +76,12 @@ public class Assets {
 
 	public static final AssetDescriptor<Texture> OSEMBER_TEXTURE
 			= new AssetDescriptor<Texture>("actor/Osember_01.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> CELMAG_TEXTURE
+			= new AssetDescriptor<Texture>("Gombok/cel_mag.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> CELTAV_TEXTURE
+			= new AssetDescriptor<Texture>("Gombok/cel_tav.png", Texture.class);
 
 	public static final AssetDescriptor<Sound> STAR_SOUND
 			= new AssetDescriptor<Sound>("hangok/star.wav", Sound.class);
@@ -143,6 +149,10 @@ public class Assets {
 		manager.load(BACKGROUND_TEXTURE);
 
 		manager.load(OSEMBER_TEXTURE);
+
+		manager.load(CELMAG_TEXTURE);
+
+		manager.load(CELTAV_TEXTURE);
 	}
 
     public static void afterLoaded() {

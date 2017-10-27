@@ -30,13 +30,28 @@ public class MyGdxGame extends MyGame {
     }
 
 	public Button.ButtonStyle getButtonStyleSzog() {
-		Button.ButtonStyle ButtonStyle = new TextButton.TextButtonStyle();
+		Button.ButtonStyle ButtonStyle = new Button.ButtonStyle();
 		ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SZOG_TEXTURE)));
 		ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SZOG_TEXTURE)));
 		ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.SZOG_TEXTURE)));
 		return ButtonStyle;
 	}
 
+	public Button.ButtonStyle getButtonStyleCelmag() {
+		Button.ButtonStyle ButtonStyle = new Button.ButtonStyle();
+		ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELMAG_TEXTURE)));
+		ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELMAG_TEXTURE)));
+		ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELMAG_TEXTURE)));
+		return ButtonStyle;
+	}
+
+	public Button.ButtonStyle getButtonStyleCeltav() {
+		Button.ButtonStyle ButtonStyle = new Button.ButtonStyle();
+		ButtonStyle.up = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELTAV_TEXTURE)));
+		ButtonStyle.over = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELTAV_TEXTURE)));
+		ButtonStyle.down = new TextureRegionDrawable(new TextureRegion(Assets.manager.get(Assets.CELTAV_TEXTURE)));
+		return ButtonStyle;
+	}
 
 	public TextButton.TextButtonStyle getTextButtonStyle() {
 		TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
