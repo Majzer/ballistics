@@ -13,11 +13,13 @@ import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
 public class DosActor extends OneSpriteStaticActor {
 
+    GameStage  gameStage;
 
-    public DosActor(Texture texture, float x, float y) {
+    public DosActor(Texture texture, float x, float y, GameStage gameStage) {
         super(texture);
         setSize(1.024f,0.768f);
         setPosition(x, y);
+        this.gameStage = gameStage;
     }
 
     @Override
@@ -27,8 +29,10 @@ public class DosActor extends OneSpriteStaticActor {
         if(getX()<0) setX(0);
         if(getY() > 0) setY(getY()-1*elapsedTime*10);
         if(getY()<0) setY(0);
-        if(getWidth()<10.24f)
-        setSize(10.24f*elapsedTime*4,7.68f*elapsedTime*4);
+        if(getWidth()<gameStage.getViewport().getWorldWidth())
+            setWidth(10.24f*elapsedTime*4);
+        if(getHeight()<gameStage.getViewport().getWorldHeight())
+            setHeight(7.68f*elapsedTime*4);
         if(3.0 < elapsedTime)  {
             getStage().getActors().removeValue(this, true);
         }

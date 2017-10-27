@@ -38,6 +38,7 @@ public class IBMActor extends OneSpriteStaticActor {
     Texture dos3 = Assets.manager.get(Assets.DOS3_TEXTURE);
 
     Ballistics ballistics;
+    GameStage gameStage;
 
     ControlStage controlStage;
 
@@ -58,18 +59,19 @@ public class IBMActor extends OneSpriteStaticActor {
             soundXP.play();
             vel = vel(1,3);
             if(vel==1) {
-                getStage().addActor(new DosActor(dos1, getX(), getY()));
+                getStage().addActor(new DosActor(dos1, getX(), getY(), gameStage));
             } else if(vel==2) {
-                getStage().addActor(new DosActor(dos2, getX(), getY()));
-            } else getStage().addActor(new DosActor(dos3, getX(), getY()));
+                getStage().addActor(new DosActor(dos2, getX(), getY(), gameStage));
+            } else getStage().addActor(new DosActor(dos3, getX(), getY(), gameStage));
             getStage().getActors().removeValue(this, true);
         }
     }
 
-    public IBMActor(float x, float y, MyStage stage) {
+    public IBMActor(float x, float y, GameStage gameStage) {
         super(Assets.manager.get(Assets.IBM_TEXTURE));
         setSize(1, 1);
         setPosition(x - getWidth() / 2, y - getHeight() / 2);
+        this.gameStage = gameStage;
         /*final Label lblMagassag = new Label("", gameStage.getLabelStyle()){
 
             public float elapsedTime= 0;

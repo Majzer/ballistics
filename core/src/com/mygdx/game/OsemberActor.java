@@ -43,6 +43,7 @@ public class OsemberActor extends OneSpriteStaticActor {
             }
         };
         label.setPosition(0, 1);
+        label.setHeight(1);
         label.setTouchable(Touchable.disabled);
         label.setVisible(true);
         gameStage.addActor(label);
