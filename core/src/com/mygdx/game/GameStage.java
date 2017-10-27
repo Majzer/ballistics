@@ -1,10 +1,12 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
@@ -82,6 +84,10 @@ public class GameStage extends MyStage {
                         addActor(new FloppyActor(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0), 0, ibmActor, getGameStage()));
                         addActor(new FloppyActor(new Ballistics(x - getOffsetX(), y - getOffsetY(), v0), 1, ibmActor, getGameStage()));
                         addActor(ibmActor);
+                      /*..  final Label lblMagassag = new Label("", getLabelStyle());
+                        lblMagassag.setPosition(ibmActor.getX(),ibmActor.getY()-10);
+                        lblMagassag.setText("Magasság: "+ibmActor.getY());
+                        addActor(lblMagassag); */
                     }
                     catch (Exception e)
                     {
@@ -99,7 +105,16 @@ public class GameStage extends MyStage {
         //setDebugAll(true);
     }
 
+    public Label.LabelStyle getLabelStyle() {
+        Label.LabelStyle style;
+        style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
+        style.font = Assets.manager.get(Assets.ARIAL_15_FONT);
+        style.fontColor = Color.WHITE;
+        return style;
+    }
+
     @Override
-    public void init(){
+    public void init() {
+
     }
 }

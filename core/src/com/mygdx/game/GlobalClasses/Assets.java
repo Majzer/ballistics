@@ -32,6 +32,17 @@ public class Assets {
 		fontParameter.fontParameters.color = Color.WHITE;
 	}
 
+	static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter2 = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
+	static {
+		fontParameter2.fontFileName = "arial.ttf";
+		fontParameter2.fontParameters.size = 30;
+		fontParameter2.fontParameters.characters = CHARS;
+		fontParameter2.fontParameters.color = Color.WHITE;
+	}
+
+	public static final AssetDescriptor<BitmapFont> ARIAL_15_FONT
+			= new AssetDescriptor<BitmapFont>(fontParameter2.fontFileName, BitmapFont.class, fontParameter2);
+
 	public static final AssetDescriptor<BitmapFont> ARIAL_30_FONT
 			= new AssetDescriptor<BitmapFont>(fontParameter.fontFileName, BitmapFont.class, fontParameter);
 
@@ -115,6 +126,8 @@ public class Assets {
 		manager.load(IBM_TEXTURE);
 
 		manager.load(ARIAL_30_FONT);
+
+		manager.load(ARIAL_15_FONT);
 
 		manager.load(STAR_SOUND);
 

@@ -46,10 +46,10 @@ public class IBMActor extends OneSpriteStaticActor {
     public void decLife(){
         life--;
         if (life==1){
-        soundFlopi1.play(300);
+        soundFlopi1.play(400);
         }
         if (life==0){
-            soundFlopi2.play(300);
+            soundFlopi2.play(400);
             soundXP.play();
             vel = vel(1,3);
             if(vel==1) {

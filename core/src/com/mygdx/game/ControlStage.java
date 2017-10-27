@@ -105,7 +105,7 @@ public class ControlStage extends MyStage {
 
         //V0 változtató slider
         final MySlider slider = new MySlider(1,50, 0.01f, false, game.getSliderStyle());
-        slider.setValue(25);
+        slider.setValue(10);
         gameStage.setV0(slider.getValue());
         slider.addCaptureListener(new ChangeListener() {
             @Override
