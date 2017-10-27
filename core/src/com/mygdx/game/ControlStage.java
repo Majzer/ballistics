@@ -148,11 +148,11 @@ public class ControlStage extends MyStage {
     @Override
     public void init() {
         final Label lblV0 = new Label("Kilövési sebesség", getLabelStyle());
-        lblV0.setPosition(getViewport().getWorldWidth()/2-475, getViewport().getWorldHeight()-55);
+        lblV0.setPosition(getViewport().getWorldWidth() / 2 - 475, getViewport().getWorldHeight() - 55);
         lblV0.setTouchable(Touchable.disabled);
         addActor(lblV0);
         final Label lblSpeed = new Label("Lejátszási sebesség", getLabelStyle());
-        lblSpeed.setPosition(getViewport().getWorldWidth()/2-475, getViewport().getWorldHeight()-105);
+        lblSpeed.setPosition(getViewport().getWorldWidth() / 2 - 475, getViewport().getWorldHeight() - 105);
         lblSpeed.setTouchable(Touchable.disabled);
         addActor(lblSpeed);
     }

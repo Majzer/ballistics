@@ -4,6 +4,8 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.Ballistics;
 import com.mygdx.game.ControlStage;
@@ -61,10 +63,62 @@ public class IBMActor extends OneSpriteStaticActor {
         }
     }
 
-    public IBMActor(float x, float y) {
+    public IBMActor(float x, float y, GameStage gameStage) {
         super(Assets.manager.get(Assets.IBM_TEXTURE));
             setSize(1, 1);
             setPosition(x - getWidth() / 2, y - getHeight() / 2);
+        final Label lblMagassag = new Label("", gameStage.getLabelStyle()){
+
+            public float elapsedTime= 0;
+
+            @Override
+            public void setVisible(boolean visible) {
+                super.setVisible(visible);
+                if (visible){
+                    elapsedTime = 0;
+                }
+            }
+
+            @Override
+            public void act(float delta) {
+                super.act(delta);
+                elapsedTime += delta;
+                if (elapsedTime>2f){
+                    setVisible(false);
+                }
+            }
+        };
+        lblMagassag.setPosition(getX(),getY()-10);
+        lblMagassag.setText("Magasság: "+getY());
+        lblMagassag.setTouchable(Touchable.disabled);
+        lblMagassag.setVisible(true);
+        gameStage.addActor(lblMagassag);
+        final Label lblTavolsag = new Label("", gameStage.getLabelStyle()){
+
+            public float elapsedTime= 0;
+
+            @Override
+            public void setVisible(boolean visible) {
+                super.setVisible(visible);
+                if (visible){
+                    elapsedTime = 0;
+                }
+            }
+
+            @Override
+            public void act(float delta) {
+                super.act(delta);
+                elapsedTime += delta;
+                if (elapsedTime>2f){
+                    setVisible(false);
+                }
+            }
+        };
+        lblTavolsag.setPosition(getX(),getY()-10);
+        lblTavolsag.setText("Távolság: "+getX());
+        lblTavolsag.setTouchable(Touchable.disabled);
+        lblTavolsag.setVisible(true);
+        gameStage.addActor(lblTavolsag);
     }
 
 /*
