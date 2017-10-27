@@ -51,7 +51,7 @@ public class Assets {
 			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb2_down.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> SLIDER_TEXTURE
-			= new AssetDescriptor<Texture>("Gombok/slider/slider.png", Texture.class);
+			= new AssetDescriptor<Texture>("Gombok/slider/slider_01.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> KNOB_TEXTURE
 			= new AssetDescriptor<Texture>("Gombok/slider/knob.png", Texture.class);

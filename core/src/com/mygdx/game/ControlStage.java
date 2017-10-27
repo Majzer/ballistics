@@ -1,9 +1,12 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -33,12 +36,14 @@ public class ControlStage extends MyStage {
         return slider_ertek;
     }
 
+
+
     public ControlStage(Batch batch, MyGdxGame game, final GameStage gameStage) {
         super(new ExtendViewport(1024,768), batch, game);
         this.gameStage = gameStage;
 
 
-
+        /*
         //1-es röppálya gomb!!
         Button buttonV0_1;
         addActor(buttonV0_1 = new Button(game.getButtonStyleV0_1()));
@@ -62,6 +67,7 @@ public class ControlStage extends MyStage {
             }
         });
         buttonV0_2.setPosition(buttonV0_1.getWidth()*2 , getViewport().getWorldHeight()-buttonV0_2.getHeight()-buttonV0_1.getHeight() );
+        */
 
         //Szükséges szög "gomb"
         Button buttonSzog;
@@ -73,7 +79,7 @@ public class ControlStage extends MyStage {
                 //Röppályákat tartalmazó tömb 1. elemére mutató változó
             }
         });
-        buttonSzog.setPosition(0,0);
+        buttonSzog.setPosition(5 , getViewport().getWorldHeight()-buttonSzog.getHeight()-20);
 
         //V0 változtató slider
         final MySlider slider = new MySlider(1,200, 1, false, game.getSliderStyle());
@@ -86,7 +92,7 @@ public class ControlStage extends MyStage {
                 gameStage.setV0(slider.getValue());
             }
         });
-        slider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-50);
+        slider.setPosition(getViewport().getWorldWidth()/2-100, getViewport().getWorldHeight()-55);
         slider.setSize(600,20);
         //slider.setValue(100);
         addActor(slider);
@@ -97,9 +103,9 @@ public class ControlStage extends MyStage {
     }
 
 
-
     @Override
     public void init() {
 
     }
+
 }
