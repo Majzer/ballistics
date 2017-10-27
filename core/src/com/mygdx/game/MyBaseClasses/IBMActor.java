@@ -54,10 +54,10 @@ public class IBMActor extends OneSpriteStaticActor {
             soundXP.play();
             vel = vel(1,3);
             if(vel==1) {
-                getStage().addActor(new DosActor(dos1));
+                getStage().addActor(new DosActor(dos1, getX(), getY()));
             } else if(vel==2) {
-                getStage().addActor(new DosActor(dos2));
-            } else getStage().addActor(new DosActor(dos3));
+                getStage().addActor(new DosActor(dos2, getX(), getY()));
+            } else getStage().addActor(new DosActor(dos3, getX(), getY()));
             getStage().getActors().removeValue(this, true);
         }
     }
