@@ -29,7 +29,7 @@ public class Assets {
 		fontParameter.fontFileName = "arial.ttf";
 		fontParameter.fontParameters.size = 30;
 		fontParameter.fontParameters.characters = CHARS;
-		fontParameter.fontParameters.color = Color.WHITE;
+		fontParameter.fontParameters.color = Color.RED;
 	}
 
 	static final FreetypeFontLoader.FreeTypeFontLoaderParameter font15Parameter = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
@@ -37,23 +37,20 @@ public class Assets {
 		font15Parameter.fontFileName = "arial.ttf";
 		font15Parameter.fontParameters.size = 15;
 		font15Parameter.fontParameters.characters = CHARS;
-		font15Parameter.fontParameters.color = Color.WHITE;
+		font15Parameter.fontParameters.color = Color.RED;
 	}
 
 	public static final AssetDescriptor<BitmapFont> ARIAL_30_FONT
 			= new AssetDescriptor<BitmapFont>(fontParameter.fontFileName, BitmapFont.class, fontParameter);
 
-	public static final AssetDescriptor<BitmapFont> ARIAL_15_FONT
-			= new AssetDescriptor<BitmapFont>(font15Parameter.fontFileName, BitmapFont.class, font15Parameter);
-
 	public static final AssetDescriptor<Texture> FLOPPYDISK_TEXTURE
 			= new AssetDescriptor<Texture>("actor/floppy.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> SLIDER_TEXTURE
-			= new AssetDescriptor<Texture>("Gombok/slider/slider_01.png", Texture.class);
+			= new AssetDescriptor<Texture>("slider/slider_01.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> KNOB_TEXTURE
-			= new AssetDescriptor<Texture>("Gombok/slider/knob.png", Texture.class);
+			= new AssetDescriptor<Texture>("slider/knob.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> IBM_TEXTURE
 			= new AssetDescriptor<Texture>("actor/ibm_pc.png", Texture.class);

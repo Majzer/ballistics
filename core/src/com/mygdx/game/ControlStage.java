@@ -50,7 +50,6 @@ public class ControlStage extends MyStage {
         slider.addCaptureListener(new ChangeListener() {
             @Override
             public void changed(ChangeListener.ChangeEvent event, Actor actor) {
-                //slider_ertek = ((Slider)actor).getValue();
                 //System.out.println(((Slider)actor).getValue() + " m/s");
                 gameStage.setV0(slider.getValue());
             }
@@ -58,8 +57,8 @@ public class ControlStage extends MyStage {
         slider.setPosition(getViewport().getWorldWidth()/2-200, getViewport().getWorldHeight()-50);
         slider.setUnits("m/s");
         slider.setSize(600,20);
-        //slider.setValue(100);
         addActor(slider);
+
         final MySlider speedSlider = new MySlider(0.01f, 1,0.001f, false,game.getSliderStyle());
         speedSlider.setValue(1);
         speedSlider.setUnits("x speed");
