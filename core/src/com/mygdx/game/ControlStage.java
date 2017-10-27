@@ -1,10 +1,12 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -39,7 +41,7 @@ public class ControlStage extends MyStage {
         this.gameStage = gameStage;
 
 
-
+        /*
         //1-es röppálya gomb!!
         Button buttonV0_1;
         addActor(buttonV0_1 = new Button(game.getButtonStyleV0_1()));
@@ -63,6 +65,7 @@ public class ControlStage extends MyStage {
             }
         });
         buttonV0_2.setPosition(buttonV0_1.getWidth()*2 , getViewport().getWorldHeight()-buttonV0_2.getHeight()-buttonV0_1.getHeight() );
+        */
 
         //Szükséges szög "gomb"
         Button buttonSzog;
@@ -74,7 +77,30 @@ public class ControlStage extends MyStage {
                 //Röppályákat tartalmazó tömb 1. elemére mutató változó
             }
         });
-        buttonSzog.setPosition(0,0);
+        buttonSzog.setPosition(5, getViewport().getWorldHeight() - buttonSzog.getHeight() - 20);
+
+        //Cél magassága"gomb"
+        Button buttonCelmag;
+        addActor(buttonCelmag = new Button(game.getButtonStyleCelmag()));
+        buttonSzog.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+            }
+        });
+        buttonCelmag.setPosition(5, getViewport().getWorldHeight() - buttonSzog.getHeight() - buttonCelmag.getHeight() - 20);
+
+        //Cél távolsága"gomb"
+        Button buttonCeltav;
+        addActor(buttonCeltav = new Button(game.getButtonStyleCeltav()));
+        buttonSzog.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+            }
+        });
+        buttonCeltav.setPosition(5, getViewport().getWorldHeight() - buttonSzog.getHeight() - buttonCelmag.getHeight() - buttonCeltav.getMinHeight() - 20);
+
 
         //V0 változtató slider
         final MySlider slider = new MySlider(1,50, 0.01f, false, game.getSliderStyle());
@@ -113,5 +139,6 @@ public class ControlStage extends MyStage {
 
     @Override
     public void init() {
+
     }
 }

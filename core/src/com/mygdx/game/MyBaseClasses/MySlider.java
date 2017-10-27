@@ -51,6 +51,7 @@ public class MySlider extends Slider implements InitableInterface{
     @Override
     public void init() {
         final Label label = new Label("",getLabelStyle()){
+
             public float elapsedTime= 0;
 
             @Override
