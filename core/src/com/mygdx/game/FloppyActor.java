@@ -1,7 +1,9 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.mygdx.game.GlobalClasses.Assets;
+import com.mygdx.game.MyBaseClasses.DosActor;
 import com.mygdx.game.MyBaseClasses.IBMActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.ShapeType;
@@ -35,7 +37,7 @@ public class FloppyActor extends OneSpriteStaticActor {
 
         float[] pos = ballistics.getXYbyTime(elapsedTime,indexOfAngles);
         setPosition(pos[0]-getWidth()/2,pos[1]-getHeight()/2);
-        setRotation(getRotation()-ballistics.getV0()*(1/getElapsedTime())); // pörgetés átállítása
+        rotateBy(-ballistics.getV0()*(1/getElapsedTime())); // pörgetés átállítása
         if (elapsedTime>ballistics.getTimeOfFlight(indexOfAngles)){
             getStage().getActors().removeValue(this, true);
             sound.play();

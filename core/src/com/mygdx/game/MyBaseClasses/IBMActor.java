@@ -3,8 +3,10 @@ package com.mygdx.game.MyBaseClasses;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.Ballistics;
+import com.mygdx.game.ControlStage;
 import com.mygdx.game.GameStage;
 import com.mygdx.game.GlobalClasses.Assets;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyActor;
@@ -12,6 +14,7 @@ import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
 import javax.swing.JOptionPane;
+import javax.xml.soap.Text;
 
 import sun.rmi.runtime.Log;
 
@@ -29,13 +32,17 @@ public class IBMActor extends OneSpriteStaticActor {
     Texture dos3 = Assets.manager.get(Assets.DOS3_TEXTURE);
 
     Ballistics ballistics;
-    GameStage gameStage;
 
-    int life = 2, vel;
+    ControlStage controlStage;
+
+    int life = 2, vel=1;
+
 
     public int vel(int a, int b) {
-        return (int)Math.random()*(b-a+1)+a;
+        return (int)Math.floor(Math.random()*(b-a+1)+a);
     }
+
+
 
     public void decLife(){
         life--;
@@ -43,24 +50,31 @@ public class IBMActor extends OneSpriteStaticActor {
         soundFlopi1.play(150);
         }
         if (life==0){
-            soundFlopi2.play(150);
+            soundFlopi2.play(200);
             soundXP.play();
-            vel=vel(1,3);
-            switch(vel){
-                case 1: new DosActor(dos1);
-                case 2: new DosActor(dos2);
-                case 3: new DosActor(dos3);
-            }
+            vel = vel(1,3);
+            if(vel==1) {
+                getStage().addActor(new DosActor(dos1));
+            } else if(vel==2) {
+                getStage().addActor(new DosActor(dos2));
+            } else getStage().addActor(new DosActor(dos3));
             getStage().getActors().removeValue(this, true);
         }
     }
 
     public IBMActor(float x, float y) {
         super(Assets.manager.get(Assets.IBM_TEXTURE));
-        setSize(100,100);
-        setPosition(x-getWidth()/2, y-getHeight()/2);
+        setSize(100, 100);
+        setPosition(x - getWidth() / 2, y - getHeight() / 2);
     }
-
+/*
+    public IBMActor(float x, float y, final GameStage gameStage) {
+        super(Assets.manager.get(Assets.IBM_TEXTURE));
+        setSize(100, 100);
+        setPosition(x - getWidth() / 2, y - getHeight() / 2);
+        this.gameStage = gameStage;
+    }
+*/
 
 
     @Override

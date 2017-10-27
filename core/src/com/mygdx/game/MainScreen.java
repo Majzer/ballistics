@@ -13,6 +13,8 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.mygdx.game.GlobalClasses.Assets;
+import com.mygdx.game.MyBaseClasses.DosActor;
+import com.mygdx.game.MyBaseClasses.IBMActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyScreen;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyStage;
 
@@ -24,6 +26,7 @@ public class MainScreen extends MyScreen {
 
     GameStage gameStage;
     ControlStage controlStage;
+    IBMActor ibmActor;
     Sound sound = Assets.manager.get(Assets.BACKGROUND_SOUND);
 
     public MainScreen(MyGdxGame game) {
