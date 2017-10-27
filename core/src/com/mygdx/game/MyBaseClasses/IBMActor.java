@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.Ballistics;
 import com.mygdx.game.ControlStage;
@@ -36,6 +37,7 @@ public class IBMActor extends OneSpriteStaticActor {
     Texture dos1 = Assets.manager.get(Assets.DOS1_TEXTURE);
     Texture dos2 = Assets.manager.get(Assets.DOS2_TEXTURE);
     Texture dos3 = Assets.manager.get(Assets.DOS3_TEXTURE);
+    InfoLabelActor info;
 
     Ballistics ballistics;
 
@@ -63,11 +65,13 @@ public class IBMActor extends OneSpriteStaticActor {
                 getStage().addActor(new DosActor(dos2, getX(), getY()));
             } else getStage().addActor(new DosActor(dos3, getX(), getY()));
             getStage().getActors().removeValue(this, true);
+            info.getStage().getActors().removeValue(info, true);
         }
     }
 
-    public IBMActor(float x, float y, MyStage stage) {
+    public IBMActor(float x, float y, InfoLabelActor info) {
         super(Assets.manager.get(Assets.IBM_TEXTURE));
+        this.info = info;
         setSize(1, 1);
         setPosition(x - getWidth() / 2, y - getHeight() / 2);
         /*final Label lblMagassag = new Label("", gameStage.getLabelStyle()){
@@ -149,4 +153,6 @@ public class IBMActor extends OneSpriteStaticActor {
             letrehozta = true;
         } */
     }
+
+
 }
