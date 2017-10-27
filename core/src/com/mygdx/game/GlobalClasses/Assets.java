@@ -36,7 +36,7 @@ public class Assets {
 
 
 	public static final AssetDescriptor<Texture> FLOPPYDISK_TEXTURE
-			= new AssetDescriptor<Texture>("Floppy_Disk.png", Texture.class);
+			= new AssetDescriptor<Texture>("floppy.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> V0_BUTTON_1_TEXTURE
 			= new AssetDescriptor<Texture>("Gombok/v0_buttons/gomb1.png", Texture.class);
@@ -57,7 +57,7 @@ public class Assets {
 			= new AssetDescriptor<Texture>("Gombok/slider/knob.png", Texture.class);
 
 	public static final AssetDescriptor<Texture> IBM_TEXTURE
-			= new AssetDescriptor<Texture>("IBM.png", Texture.class);
+			= new AssetDescriptor<Texture>("ibm_pc.png", Texture.class);
 
     public static final AssetDescriptor<Texture> DOS1_TEXTURE
             = new AssetDescriptor<Texture>("DOS1.png", Texture.class);
@@ -70,6 +70,9 @@ public class Assets {
 
 	public static final AssetDescriptor<Texture> SZOG_TEXTURE
 			= new AssetDescriptor<Texture>("szog.png", Texture.class);
+
+	public static final AssetDescriptor<Texture> BACKGROUND_TEXTURE
+			= new AssetDescriptor<Texture>("background.png", Texture.class);
 
 	public static final AssetDescriptor<Sound> STAR_SOUND
 			= new AssetDescriptor<Sound>("star.wav", Sound.class);
@@ -133,6 +136,7 @@ public class Assets {
 
 		manager.load(SZOG_TEXTURE);
 
+		manager.load(BACKGROUND_TEXTURE);
 	}
 
     public static void afterLoaded() {
