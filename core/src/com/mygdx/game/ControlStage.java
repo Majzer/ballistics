@@ -10,6 +10,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.GlobalClasses.Assets;
+import com.mygdx.game.MyBaseClasses.DosActor;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyStage;
 
 /**
@@ -87,6 +89,7 @@ public class ControlStage extends MyStage {
         slider.setSize(600,20);
         //slider.setValue(100);
         addActor(slider);
+
 
 
 

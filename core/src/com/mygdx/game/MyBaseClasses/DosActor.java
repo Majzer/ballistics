@@ -1,6 +1,8 @@
 package com.mygdx.game.MyBaseClasses;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
+import com.mygdx.game.GameStage;
 import com.mygdx.game.GlobalClasses.Assets;
 import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
@@ -9,8 +11,6 @@ import com.mygdx.game.MyBaseClasses.Scene2D.OneSpriteStaticActor;
  */
 
 public class DosActor extends OneSpriteStaticActor {
-
-
 
 
     public DosActor(Texture texture) {
