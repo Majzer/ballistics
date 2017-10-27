@@ -12,6 +12,7 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.GlobalClasses.Assets;
 import com.mygdx.game.MyBaseClasses.DosActor;
+import com.mygdx.game.MyBaseClasses.MySlider;
 import com.mygdx.game.MyBaseClasses.Scene2D.MyStage;
 
 /**
@@ -75,7 +76,7 @@ public class ControlStage extends MyStage {
         buttonSzog.setPosition(0,0);
 
         //V0 változtató slider
-        final Slider slider = new Slider(1,200, 1, false, game.getSliderStyle());
+        final MySlider slider = new MySlider(1,200, 1, false, game.getSliderStyle());
         slider.setValue(100);
         slider.addCaptureListener(new ChangeListener() {
             @Override
